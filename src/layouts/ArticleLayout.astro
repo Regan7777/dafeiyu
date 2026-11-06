@@ -31,6 +31,9 @@ const postSlug = post.id || (post as any).slug;
   dateModified={post.data.date}
   faqs={post.data.faqs}
 >
+  <!-- Reading Progress Bar (顶部阅读进度条) -->
+  <div class="reading-progress" id="readingProgress"></div>
+
   <main class="main-content">
     <div class="content-container">
       <!-- Article Main Column -->
@@ -186,6 +189,18 @@ const postSlug = post.id || (post as any).slug;
       }, { rootMargin: '0px 0px -70% 0px' });
 
       headings.forEach(h => observer.observe(h));
+    }
+
+    // Reading Progress Bar
+    const progressBar = document.getElementById('readingProgress');
+    if (progressBar) {
+      window.addEventListener('scroll', () => {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight > 0) {
+          const scrolled = (window.scrollY / docHeight) * 100;
+          progressBar.style.width = `${Math.min(scrolled, 100)}%`;
+        }
+      }, { passive: true });
     }
 
     if (document.readyState === 'loading') {
