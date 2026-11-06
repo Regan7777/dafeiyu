@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="scGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#scGrad)" />
+  <!-- Dual Dynamic Curved Arrows -->
+  <path d="M42 52 A26 26 0 0 1 86 52" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" />
+  <polygon points="84,40 96,52 84,64" fill="#ffffff" />
+  <path d="M86 76 A26 26 0 0 1 42 76" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" />
+  <polygon points="44,88 32,76 44,64" fill="#ffffff" />
+  <!-- Node Dots -->
+  <circle cx="64" cy="64" r="5" fill="#38bdf8" />
+</svg>

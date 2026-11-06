@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>链接跳转中 - 大肥鱼 · 博客</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const target = params.get('target');
+    if (target) {
+      window.location.replace('/go/' + encodeURIComponent(target) + '/');
+    } else {
+      window.location.replace('/');
+    }
+  </script>
+</head>
+<body>
+  <p>正在跳转...</p>
+</body>
+</html>

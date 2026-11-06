@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="cmiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#cmiBg)" />
+  <!-- Stylized Cat + M Monogram -->
+  <path d="M34 50 L48 64 L80 64 L94 50 L90 84 C90 94 80 100 64 100 C48 100 38 94 38 84 Z" fill="#ffffff" />
+  <!-- M Shape Inside -->
+  <path d="M46 88 L46 72 L64 84 L82 72 L82 88" fill="none" stroke="#4f46e5" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Ears Accent -->
+  <polygon points="38,56 48,64 42,68" fill="#f43f5e" />
+  <polygon points="90,56 80,64 86,68" fill="#f43f5e" />
+  <!-- Top Dot -->
+  <circle cx="64" cy="30" r="5" fill="#38bdf8" />
+  <line x1="64" y1="35" x2="64" y2="46" stroke="#38bdf8" stroke-width="3" />
+</svg>

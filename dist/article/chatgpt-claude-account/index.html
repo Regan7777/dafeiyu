@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ChatGPT 与 Claude 海外账号防封指南与 API 绑卡实操心得 - 大肥鱼 · 博客 (dafeiyu.blog)</title><link rel="icon" type="image/svg+xml" href="/images/deepseek-logo.svg"><!-- SEO Meta Tags --><meta name="description" content="梳理 OpenAI 与 Anthropic 严苛的风控封号机制，从原生干净 IP 节点筛选、无痕浏览器指纹、到虚拟信用卡充值绑卡的一揽子安全方案。"><meta name="keywords" content="ChatGPT Plus注册, Claude Pro账号, 海外虚拟卡, Stripe支付避风控, 账号防封"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"><link rel="canonical" href="https://dafeiyu.blog/article/chatgpt-claude-account"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:title" content="ChatGPT 与 Claude 海外账号防封指南与 API 绑卡实操心得"><meta property="og:description" content="梳理 OpenAI 与 Anthropic 严苛的风控封号机制，从原生干净 IP 节点筛选、无痕浏览器指纹、到虚拟信用卡充值绑卡的一揽子安全方案。"><meta property="og:url" content="https://dafeiyu.blog/article/chatgpt-claude-account"><meta property="og:site_name" content="大肥鱼 · 博客"><!-- Schema.org JSON-LD --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"大肥鱼 · 博客","url":"https://dafeiyu.blog","description":"2026机场推荐、科学上网与Clash客户端配置指南、主流海外流媒体解锁及前沿AI生产力实战。","publisher":{"@type":"Organization","name":"大肥鱼","url":"https://dafeiyu.blog","logo":{"@type":"ImageObject","url":"https://dafeiyu.blog/images/deepseek-logo.svg"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dafeiyu.blog/article/chatgpt-claude-account"},"headline":"ChatGPT 与 Claude 海外账号防封指南与 API 绑卡实操心得","description":"梳理 OpenAI 与 Anthropic 严苛的风控封号机制，从原生干净 IP 节点筛选、无痕浏览器指纹、到虚拟信用卡充值绑卡的一揽子安全方案。","datePublished":"2026-01-12","dateModified":"2026-01-12","author":{"@type":"Person","name":"大肥鱼","url":"https://dafeiyu.blog/about"},"publisher":{"@type":"Organization","name":"大肥鱼","url":"https://dafeiyu.blog","logo":{"@type":"ImageObject","url":"https://dafeiyu.blog/images/deepseek-logo.svg"}},"articleSection":"AI使用"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://dafeiyu.blog"},{"@type":"ListItem","position":2,"name":"AI使用","item":"https://dafeiyu.blog/?category=AI%E4%BD%BF%E7%94%A8"},{"@type":"ListItem","position":3,"name":"ChatGPT 与 Claude 海外账号防封指南与 API 绑卡实操心得","item":"https://dafeiyu.blog/article/chatgpt-claude-account"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"注册 ChatGPT 与 Claude 选用什么邮箱最不容易触发风控拦截？","acceptedAnswer":{"@type":"Answer","text":"强烈推荐使用海外老牌服务商的独立个人邮箱（如注册满半年的 Outlook、Gmail 或 ProtonMail），严禁使用各类临时接码邮箱、免费二级域名企业邮或国内主流邮箱。"}},{"@type":"Question","name":"为什么使用普通机场节点登录 Claude 极易被瞬间封禁（Deactivated）？","acceptedAnswer":{"@type":"Answer","text":"Anthropic 的风控算法对住宅 IP 纯净度要求极高，其机房 IP 黑名单更新极为激进。若节点被检测到频繁变动地理坐标或多人共享，系统会直接触发静默封禁。必须使用原生固定住宅 IP。"}},{"@type":"Question","name":"虚拟信用卡在充值 ChatGPT Plus 时扣款被拒如何解决？","acceptedAnswer":{"@type":"Answer","text":"绑定信用卡时，浏览器必须开启全无痕隐身模式，节点必须与信用卡账单地址的邮编归属州（如免税州 Oregon / Delaware）保持一致，且先在卡内充值足够余额防范预扣款失败。"}}]}</script><!-- Fonts & Icons --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><!-- Highlight.js Theme --><link id="hljsTheme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"><!-- Stylesheets --><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/article.css"><!-- Theme Script (Prevent FOUC) --><script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      if (savedTheme === 'dark') {
+        const hljsLink = document.getElementById('hljsTheme');
+        if (hljsLink) hljsLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css';
+      }
+    })();
+  </script></head><body><!-- Mobile Header --><header class="mobile-header"><div class="brand"><div class="logo-avatar" style="width: 32px; height: 32px;"><img src="/images/deepseek-logo-white.svg" alt="DeepSeek Logo"></div><span class="brand-title" style="font-size: 16px;">大肥鱼</span></div><div class="mobile-header-actions"><button class="mobile-theme-btn" id="mobileThemeToggle" aria-label="切换黑白模式" title="切换黑白模式"><i class="fa-solid fa-sun theme-icon-sun"></i><i class="fa-solid fa-moon theme-icon-moon"></i></button><button class="mobile-menu-btn" id="sidebarToggle" aria-label="打开菜单"><i class="fa-solid fa-bars"></i></button></div></header><!-- App Container --><div class="app-layout"><!-- Left Sidebar --><aside class="sidebar-left" id="sidebarLeft"><!-- Logo Section --><a href="/" class="sidebar-brand"><div class="logo-avatar"><img src="/images/deepseek-logo-white.svg" alt="DeepSeek Logo"></div><div class="brand-text"><span class="brand-title">大肥鱼</span><span class="brand-subtitle">dafeiyu.blog</span></div></a><!-- Search Box --><div class="sidebar-search"><div class="search-inner"><i class="fa-solid fa-magnifying-glass search-icon"></i><input type="text" class="search-input" id="sidebarSearchInput" placeholder="搜索文章..." autocomplete="off"></div></div><!-- Navigation Menu --><nav class="sidebar-nav"><div class="nav-section-title">导航</div><ul class="nav-list"><li class="nav-item"><a href="/" id="navHome"><i class="fa-solid fa-house"></i><span>首页</span></a></li><li class="nav-item"><a href="/tools"><i class="fa-solid fa-screwdriver-wrench"></i><span>工具</span></a></li><li class="nav-item"><a href="/tags"><i class="fa-solid fa-tags"></i><span>标签</span></a></li><li class="nav-item"><a href="/about"><i class="fa-regular fa-user"></i><span>关于</span></a></li></ul></nav><!-- Category List --><div class="sidebar-categories"><div class="nav-section-title">文章分类</div><ul class="category-list"><li class="category-item"><a href="/?category=科学上网"><span><i class="fa-solid fa-paper-plane" style="color: #6366f1; margin-right: 8px;"></i>科学上网</span><span class="category-badge-count">8</span></a></li><li class="category-item"><a href="/?category=机场推荐"><span><i class="fa-solid fa-plane-departure" style="color: #f59e0b; margin-right: 8px;"></i>机场推荐</span><span class="category-badge-count">6</span></a></li><li class="category-item"><a href="/?category=海外流媒体"><span><i class="fa-solid fa-tv" style="color: #ec4899; margin-right: 8px;"></i>海外流媒体</span><span class="category-badge-count">3</span></a></li><li class="category-item"><a href="/?category=AI工具与实战"><span><i class="fa-solid fa-robot" style="color: #10b981; margin-right: 8px;"></i>AI工具与实战</span><span class="category-badge-count">4</span></a></li><li class="category-item"><a href="/?category=实用工具"><span><i class="fa-solid fa-screwdriver-wrench" style="color: #3b82f6; margin-right: 8px;"></i>实用工具</span><span class="category-badge-count">3</span></a></li></ul></div><!-- Theme Switcher --><div class="sidebar-theme-wrapper"><button class="theme-switch-btn" id="themeToggleBtn" aria-label="切换黑白模式" title="点击切换黑白模式"><div class="theme-switch-left"><i class="fa-solid fa-sun theme-icon-sun"></i><i class="fa-solid fa-moon theme-icon-moon"></i><span class="theme-mode-text" id="themeModeText">浅色模式</span></div><div class="theme-pill-track"><div class="theme-pill-thumb"></div></div></button></div></aside><!-- Overlay for mobile drawer --><div class="sidebar-overlay" id="sidebarOverlay"></div><!-- Main Content Area --><main class="main-content"><div class="content-container"><!-- Article Main Column --><article class="content-area"><!-- Breadcrumbs --><nav class="breadcrumbs" aria-label="面包屑导航"><a href="/"><i class="fa-solid fa-house" style="font-size: 11px; margin-right: 4px;"></i>首页</a><span class="separator">/</span><a href="/?category=AI%E4%BD%BF%E7%94%A8">AI使用</a><span class="separator">/</span><span class="current">ChatGPT 与 Claude 海外账号防封指南与 API 绑卡实操心得</span></nav><!-- Article Main Card --><div class="card article-card-main"><!-- Article Header --><header class="article-header"><div class="article-category"><span class="tag-pill tag-ai"><i class="fa-solid fa-robot"></i> AI使用</span></div><h1 class="article-title">ChatGPT 与 Claude 海外账号防封指南与 API 绑卡实操心得</h1><div class="article-meta"><span class="article-meta-item"><i class="fa-regular fa-user"></i> 大肥鱼</span><span class="article-meta-item"><i class="fa-regular fa-calendar"></i> 2026-01-12</span><span class="article-meta-item"><i class="fa-regular fa-clock"></i> 13分钟阅读</span><span class="article-meta-item"><i class="fa-regular fa-eye"></i> 6,320 次阅读</span></div></header><!-- Article Lead & Markdown Content --><div class="article-content" id="articleContent"><p class="article-lead">梳理 OpenAI 与 Anthropic 严苛的风控封号机制，从原生干净 IP 节点筛选、无痕浏览器指纹、到虚拟信用卡充值绑卡的一揽子安全方案。</p><h2 id="section-1">一、海外 AI 服务风控体系底层运作机制</h2> <p>自 2023 年以来，OpenAI（ChatGPT）与 Anthropic（Claude）对账号合规与防刷机制实施了多次升级。很多初学者在注册或使用几天后突然遭遇 <code>Your account has been disabled</code>，大多并非巧合，而是触碰了多重风控红线。</p> <p>两大平台的核心风控体系通常由以下四道防线构成：</p> <ul> <li><strong>IP 信誉与 ASN 纯净度：</strong>这是最基础也是最严格的过滤网。公共代理节点、大型云服务商机房 IP 往往由于成千上万个机器人共同出口，早已被 Cloudflare 与 Stripe 风控列入高危名单。</li> <li><strong>浏览器环境指纹 (Fingerprint)：</strong>网站会静默收集 Canvas 画布指纹、WebGL 渲染特征、系统时区、浏览器默认语言与 WebRTC 暴露的本地网络接口。</li> <li><strong>注册邮箱与接码信誉：</strong>使用临时邮箱（Temp Mail）或被反复利用的虚拟虚拟接码号（VOIP）注册，几乎是秒封的头号诱因。</li> <li><strong>Stripe 支付网关风控：</strong>在绑定信用卡开通 Plus 或 API 充值时，Stripe 会进行深层 AVS 地址校验与 3DS 动态认证。</li> </ul> <h2 id="section-2">二、安全注册三大基石：邮箱、IP 与手机号</h2> <ol> <li><strong>邮箱选型：</strong>绝对禁止使用国内邮箱（QQ、163 等）。强烈推荐使用注册时间较长、信誉健康的海外 <strong>Gmail</strong> 或自建域名的企业邮箱（如 Google Workspace / Fastmail）。</li> <li><strong>网络环境：</strong>确保当前代理节点为<strong>原生住宅 IP</strong>，并在 <code>browserleaks.com</code> 确认系统时区与 IP 物理归属国一致，关闭浏览器 WebRTC 真实泄露。</li> <li><strong>手机验证码：</strong>严禁使用免费接码平台的公共虚拟号。推荐使用海外真实实体 SIM 卡或信誉评级较高的接码服务进行单次安全验证。</li> </ol> <h2 id="section-3">三、虚拟信用卡绑定与防风控扣款技巧</h2> <p>对于没有海外本土银行卡的用户，开通 ChatGPT Plus 或 Team 计划通常依赖合规虚拟卡（如 WildCard、Depay 等）。绑卡实操中请牢记以下关键细节：</p> <ul> <li><strong>账单地址绝对一致：</strong>填写的账单地址（Street, City, State, Zip Code）必须严格对应虚拟卡后台分配给你的合法免税州地址（如俄勒冈 Oregon、特拉华 Delaware），切勿随手乱编。</li> <li><strong>卡内留足预授权扣款余额：</strong>Stripe 在初次验卡时通常会发起一笔 1~5 美元的预扣款（随后返还）。如果卡内余额为 0 导致扣款失败，Stripe 会直接对该商户账号进行风控标记，后续极易封号。</li> </ul> <h2 id="section-4">四、Claude 极度严苛环境下的生存法则</h2> <p>在业内，<strong>Claude 的封号率远高于 ChatGPT</strong>，Anthropic 对 IP 飘移与行为异常容忍度极低：</p> <blockquote> <p><strong>️ Claude 避坑警告：</strong>使用 Claude 时，务必<strong>固定使用同一个国家、同一个节点的原生 IP</strong>！绝对不要上午挂美区节点、下午切到日本节点，这种频繁的地理位置瞬移是导致 Claude 触发自动封控的最直接元凶。此外，切勿让模型连续输出可能触及 Anthropic 使用政策的高危代码与违规内容。</p> </blockquote> <h2 id="section-5">五、API 开发者安全防爆与额度管理</h2> <p>如果你在开发个人项目时调用官方 API，务必做好以下防护屏障：</p> <ol> <li><strong>严格限制每月预算配额 (Usage Limit)：</strong>在 OpenAI / Anthropic 控制台中，务必将 Hard Limit（硬性扣款阻断阈值）设置为可控金额（如 20 或 50 美元），防止本地代码逻辑出现死循环导致银行卡被瞬间刷爆。</li> <li><strong>坚决杜绝前端泄露 Key：</strong>永远不要将 API Key 硬编码在前端静态代码或公开的 GitHub 仓库中。请通过云函数或后端服务器进行鉴权代理转发。</li> </ol>
+<!-- FAQ Section (Generated directly from Frontmatter SSOT) --><h2 id="faq"><i class="fa-solid fa-circle-question" style="color: var(--accent-primary); margin-right: 8px;"></i>常见问题解答 (FAQ)</h2><div class="faq-container" style="margin: 20px 0;"><div class="faq-item" style="margin-bottom: 16px; padding: 16px 18px; background: var(--bg-input); border-radius: 8px; border: 1px solid var(--border-color);"><div style="font-weight: 700; color: var(--text-primary); margin-bottom: 6px; font-size: 15px; display: flex; align-items: baseline; gap: 6px;"><span style="color: var(--accent-primary);">Q1：</span> 注册 ChatGPT 与 Claude 选用什么邮箱最不容易触发风控拦截？</div><div style="color: var(--text-secondary); font-size: 14px; line-height: 1.7;">强烈推荐使用海外老牌服务商的独立个人邮箱（如注册满半年的 Outlook、Gmail 或 ProtonMail），严禁使用各类临时接码邮箱、免费二级域名企业邮或国内主流邮箱。</div></div><div class="faq-item" style="margin-bottom: 16px; padding: 16px 18px; background: var(--bg-input); border-radius: 8px; border: 1px solid var(--border-color);"><div style="font-weight: 700; color: var(--text-primary); margin-bottom: 6px; font-size: 15px; display: flex; align-items: baseline; gap: 6px;"><span style="color: var(--accent-primary);">Q2：</span> 为什么使用普通机场节点登录 Claude 极易被瞬间封禁（Deactivated）？</div><div style="color: var(--text-secondary); font-size: 14px; line-height: 1.7;">Anthropic 的风控算法对住宅 IP 纯净度要求极高，其机房 IP 黑名单更新极为激进。若节点被检测到频繁变动地理坐标或多人共享，系统会直接触发静默封禁。必须使用原生固定住宅 IP。</div></div><div class="faq-item" style="margin-bottom: 16px; padding: 16px 18px; background: var(--bg-input); border-radius: 8px; border: 1px solid var(--border-color);"><div style="font-weight: 700; color: var(--text-primary); margin-bottom: 6px; font-size: 15px; display: flex; align-items: baseline; gap: 6px;"><span style="color: var(--accent-primary);">Q3：</span> 虚拟信用卡在充值 ChatGPT Plus 时扣款被拒如何解决？</div><div style="color: var(--text-secondary); font-size: 14px; line-height: 1.7;">绑定信用卡时，浏览器必须开启全无痕隐身模式，节点必须与信用卡账单地址的邮编归属州（如免税州 Oregon / Delaware）保持一致，且先在卡内充值足够余额防范预扣款失败。</div></div></div><!-- Related Articles (Generated directly from Frontmatter SSOT) --><h2 id="related-articles"><i class="fa-solid fa-link" style="color: var(--accent-primary); margin-right: 8px;"></i>延伸阅读与精选内链推荐</h2><div class="related-articles-box" style="margin: 20px 0 28px 0; padding: 18px 22px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px;"><div style="font-weight: 700; font-size: 15px; margin-bottom: 12px; color: var(--text-primary); display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-compass" style="color: var(--accent-primary);"></i> 本站推荐相关深度干货专栏：</div><ul style="margin: 0; padding-left: 20px; line-height: 1.9; font-size: 14px;"><li><a href="/article/ai-workflow" style="color: var(--accent-primary); font-weight: 600;">用 AI 重新定义你的工作流：5个落地实践方案</a></li><li><a href="/article/deepseek-tutorial" style="color: var(--accent-primary); font-weight: 600;">DeepSeek V3 / R1 满血版高效提问与本地客户端部署技巧</a></li><li><a href="/article/dns-leak-fix" style="color: var(--accent-primary); font-weight: 600;">科学上网避坑：DNS 泄露检测与 TUN 虚拟网卡失效排障手册</a></li><li><a href="/article/dalao" style="color: var(--accent-primary); font-weight: 600;">大佬云机场深度评测：15元起限时特惠、全IPLC专线与终身不限时包最新资费方案</a></li></ul></div></div></div><!-- Prev / Next Post Navigation --><nav class="post-navigation"><a href="/article/ai-workflow" class="nav-card prev"><span class="nav-label"><i class="fa-solid fa-arrow-left"></i> 上一篇</span><span class="nav-title">用 AI 重新定义你的工作流：5个落地实践方案</span></a><a href="/article/chrome-extensions" class="nav-card next"><span class="nav-label">下一篇 <i class="fa-solid fa-arrow-right"></i></span><span class="nav-title">2026 年最值得安装的 10 个 Chrome 扩展插件（沉浸式翻译与效率神器）</span></a></nav></article><!-- Sticky TOC --><aside class="toc-container"><div class="toc-card"><div class="toc-title"><i class="fa-solid fa-list-ul"></i><span>文章目录</span></div><nav class="toc-nav" id="tocNav"><!-- Populated on client side --></nav></div></aside></div></main><script>
+    function buildTOC() {
+      const content = document.getElementById('articleContent');
+      const toc = document.getElementById('tocNav');
+      if (!content || !toc) return;
+
+      const headings = content.querySelectorAll('h2, h3');
+      if (!headings.length) {
+        toc.innerHTML = '<span style="color: var(--text-muted); font-size: 13px;">暂无目录</span>';
+        return;
+      }
+
+      let html = '<ul class="toc-list">';
+      headings.forEach((h, index) => {
+        if (!h.id) {
+          h.id = 'heading-' + index;
+        }
+        const isH3 = h.tagName.toLowerCase() === 'h3';
+        const levelClass = isH3 ? 'toc-item-h3' : 'toc-item-h2';
+        html += `<li class="toc-item ${levelClass}"><a href="#${h.id}" class="toc-link">${h.textContent.trim()}</a></li>`;
+      });
+      html += '</ul>';
+      toc.innerHTML = html;
+
+      // Scroll Spy
+      const links = toc.querySelectorAll('.toc-link');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            links.forEach(l => l.classList.remove('active'));
+            const activeLink = toc.querySelector(`a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '0px 0px -70% 0px' });
+
+      headings.forEach(h => observer.observe(h));
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', buildTOC);
+    } else {
+      buildTOC();
+    }
+  </script></div><!-- Back to Top Button (一键置顶) --><button id="backToTopBtn" class="back-to-top-btn" aria-label="回到顶部" title="回到顶部"><i class="fa-solid fa-arrow-up"></i></button><!-- Global Client Interactions --><script>
+    // Theme toggle
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const mobileThemeBtn = document.getElementById('mobileThemeToggle');
+    const themeText = document.getElementById('themeModeText');
+    const hljsLink = document.getElementById('hljsTheme');
+
+    function updateThemeUI(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (themeText) {
+        themeText.textContent = theme === 'dark' ? '深色模式' : '浅色模式';
+      }
+      if (hljsLink) {
+        hljsLink.href = theme === 'dark'
+          ? 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css'
+          : 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css';
+      }
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      updateThemeUI(next);
+    }
+
+    if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+    if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleTheme);
+
+    // Initial theme text
+    const initTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    if (themeText) themeText.textContent = initTheme === 'dark' ? '深色模式' : '浅色模式';
+
+    // Mobile Sidebar Drawer
+    const sidebar = document.getElementById('sidebarLeft');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    if (sidebarToggle && sidebar && sidebarOverlay) {
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        sidebarOverlay.classList.toggle('show');
+      });
+      sidebarOverlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('show');
+      });
+    }
+
+    // Back to Top Button
+    const backBtn = document.getElementById('backToTopBtn');
+    if (backBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backBtn.classList.add('visible');
+        } else {
+          backBtn.classList.remove('visible');
+        }
+      });
+      backBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Search input redirect to home with search query
+    const searchInput = document.getElementById('sidebarSearchInput');
+    if (searchInput) {
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && searchInput.value.trim()) {
+          window.location.href = `/?search=${encodeURIComponent(searchInput.value.trim())}`;
+        }
+      });
+    }
+  </script></body></html>

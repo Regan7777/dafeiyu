@@ -1,0 +1,301 @@
+---
+import SchemaOrg from '../components/SchemaOrg.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string[];
+  type?: 'website' | 'article';
+  canonicalPath?: string;
+  category?: string;
+  datePublished?: string;
+  dateModified?: string;
+  faqs?: Array<{ q: string; a: string }>;
+}
+
+const {
+  title,
+  description = '大肥鱼技术博客 - 专注2026机场推荐、科学上网与Clash客户端配置指南、主流海外流媒体解锁及前沿AI生产力实战。',
+  keywords = ['大肥鱼', '2026机场推荐', '科学上网', 'Clash配置', 'Sing-box', '流媒体解锁', 'AI工具'],
+  type = 'website',
+  canonicalPath = '',
+  category,
+  datePublished,
+  dateModified,
+  faqs = []
+} = Astro.props;
+
+const siteUrl = 'https://dafeiyu.blog';
+const canonicalUrl = `${siteUrl}${canonicalPath}`;
+const pageTitle = title.includes('大肥鱼') ? title : `${title} - 大肥鱼 · 博客 (dafeiyu.blog)`;
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+  <link rel="icon" type="image/svg+xml" href="/images/deepseek-logo.svg">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content={description}>
+  <meta name="keywords" content={keywords.join(', ')}>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href={canonicalUrl}>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={type === 'article' ? 'article' : 'website'}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:site_name" content="大肥鱼 · 博客">
+
+  <!-- Schema.org JSON-LD -->
+  <SchemaOrg
+    type={type}
+    title={title}
+    description={description}
+    datePublished={datePublished}
+    dateModified={dateModified}
+    category={category}
+    url={canonicalPath}
+    faqs={faqs}
+  />
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Highlight.js Theme -->
+  <link id="hljsTheme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/article.css">
+
+  <!-- Theme Script (Prevent FOUC) -->
+  <script is:inline>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      if (savedTheme === 'dark') {
+        const hljsLink = document.getElementById('hljsTheme');
+        if (hljsLink) hljsLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css';
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div class="brand">
+      <div class="logo-avatar" style="width: 32px; height: 32px;"><img src="/images/deepseek-logo-white.svg" alt="DeepSeek Logo"></div>
+      <span class="brand-title" style="font-size: 16px;">大肥鱼</span>
+    </div>
+    <div class="mobile-header-actions">
+      <button class="mobile-theme-btn" id="mobileThemeToggle" aria-label="切换黑白模式" title="切换黑白模式">
+        <i class="fa-solid fa-sun theme-icon-sun"></i>
+        <i class="fa-solid fa-moon theme-icon-moon"></i>
+      </button>
+      <button class="mobile-menu-btn" id="sidebarToggle" aria-label="打开菜单">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- App Container -->
+  <div class="app-layout">
+    <!-- Left Sidebar -->
+    <aside class="sidebar-left" id="sidebarLeft">
+      <!-- Logo Section -->
+      <a href="/" class="sidebar-brand">
+        <div class="logo-avatar"><img src="/images/deepseek-logo-white.svg" alt="DeepSeek Logo"></div>
+        <div class="brand-text">
+          <span class="brand-title">大肥鱼</span>
+          <span class="brand-subtitle">dafeiyu.blog</span>
+        </div>
+      </a>
+
+      <!-- Search Box -->
+      <div class="sidebar-search">
+        <div class="search-inner">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" class="search-input" id="sidebarSearchInput" placeholder="搜索文章..." autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">导航</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/" id="navHome">
+              <i class="fa-solid fa-house"></i>
+              <span>首页</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/tools">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <span>工具</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/tags">
+              <i class="fa-solid fa-tags"></i>
+              <span>标签</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/about">
+              <i class="fa-regular fa-user"></i>
+              <span>关于</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Category List -->
+      <div class="sidebar-categories">
+        <div class="nav-section-title">文章分类</div>
+        <ul class="category-list">
+          <li class="category-item">
+            <a href="/?category=科学上网">
+              <span><i class="fa-solid fa-paper-plane" style="color: #6366f1; margin-right: 8px;"></i>科学上网</span>
+              <span class="category-badge-count">8</span>
+            </a>
+          </li>
+          <li class="category-item">
+            <a href="/?category=机场推荐">
+              <span><i class="fa-solid fa-plane-departure" style="color: #f59e0b; margin-right: 8px;"></i>机场推荐</span>
+              <span class="category-badge-count">6</span>
+            </a>
+          </li>
+          <li class="category-item">
+            <a href="/?category=海外流媒体">
+              <span><i class="fa-solid fa-tv" style="color: #ec4899; margin-right: 8px;"></i>海外流媒体</span>
+              <span class="category-badge-count">3</span>
+            </a>
+          </li>
+          <li class="category-item">
+            <a href="/?category=AI工具与实战">
+              <span><i class="fa-solid fa-robot" style="color: #10b981; margin-right: 8px;"></i>AI工具与实战</span>
+              <span class="category-badge-count">4</span>
+            </a>
+          </li>
+          <li class="category-item">
+            <a href="/?category=实用工具">
+              <span><i class="fa-solid fa-screwdriver-wrench" style="color: #3b82f6; margin-right: 8px;"></i>实用工具</span>
+              <span class="category-badge-count">3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Theme Switcher -->
+      <div class="sidebar-theme-wrapper">
+        <button class="theme-switch-btn" id="themeToggleBtn" aria-label="切换黑白模式" title="点击切换黑白模式">
+          <div class="theme-switch-left">
+            <i class="fa-solid fa-sun theme-icon-sun"></i>
+            <i class="fa-solid fa-moon theme-icon-moon"></i>
+            <span class="theme-mode-text" id="themeModeText">浅色模式</span>
+          </div>
+          <div class="theme-pill-track">
+            <div class="theme-pill-thumb"></div>
+          </div>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Overlay for mobile drawer -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content Area -->
+    <slot />
+  </div>
+
+  <!-- Back to Top Button (一键置顶) -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="回到顶部" title="回到顶部">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Global Client Interactions -->
+  <script is:inline>
+    // Theme toggle
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const mobileThemeBtn = document.getElementById('mobileThemeToggle');
+    const themeText = document.getElementById('themeModeText');
+    const hljsLink = document.getElementById('hljsTheme');
+
+    function updateThemeUI(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (themeText) {
+        themeText.textContent = theme === 'dark' ? '深色模式' : '浅色模式';
+      }
+      if (hljsLink) {
+        hljsLink.href = theme === 'dark'
+          ? 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css'
+          : 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css';
+      }
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      updateThemeUI(next);
+    }
+
+    if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+    if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleTheme);
+
+    // Initial theme text
+    const initTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    if (themeText) themeText.textContent = initTheme === 'dark' ? '深色模式' : '浅色模式';
+
+    // Mobile Sidebar Drawer
+    const sidebar = document.getElementById('sidebarLeft');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    if (sidebarToggle && sidebar && sidebarOverlay) {
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        sidebarOverlay.classList.toggle('show');
+      });
+      sidebarOverlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('show');
+      });
+    }
+
+    // Back to Top Button
+    const backBtn = document.getElementById('backToTopBtn');
+    if (backBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backBtn.classList.add('visible');
+        } else {
+          backBtn.classList.remove('visible');
+        }
+      });
+      backBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Search input redirect to home with search query
+    const searchInput = document.getElementById('sidebarSearchInput');
+    if (searchInput) {
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && searchInput.value.trim()) {
+          window.location.href = `/?search=${encodeURIComponent(searchInput.value.trim())}`;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="srBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="rocketBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <linearGradient id="fireGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#srBg)" />
+  <!-- Orbital White Ring -->
+  <ellipse cx="64" cy="64" rx="46" ry="18" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6,4" transform="rotate(-35, 64, 64)" opacity="0.6" />
+  <!-- Rocket Assembly Rotated 45 deg -->
+  <g transform="translate(64,60) rotate(45) translate(-64,-64)">
+    <!-- Exhaust Fire -->
+    <polygon points="56,86 64,108 72,86" fill="url(#fireGrad)" />
+    <!-- Left Wing -->
+    <path d="M52 70 L40 84 L52 80 Z" fill="#ef4444" />
+    <!-- Right Wing -->
+    <path d="M76 70 L88 84 L76 80 Z" fill="#ef4444" />
+    <!-- Rocket Fuselage -->
+    <path d="M52 48 C52 30 64 20 64 20 C64 20 76 30 76 48 L76 80 L52 80 Z" fill="url(#rocketBody)" />
+    <!-- Nose Cone -->
+    <path d="M54 36 C57 26 64 20 64 20 C64 20 71 26 74 36 Z" fill="#ef4444" />
+    <!-- Window Porthole -->
+    <circle cx="64" cy="46" r="6" fill="#0284c7" stroke="#94a3b8" stroke-width="2" />
+    <circle cx="62" cy="44" r="2" fill="#ffffff" />
+  </g>
+</svg>

@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="关于大肥鱼与本站"
+  description="大肥鱼博客介绍、原创价值观、技术测评流程与联系方式。专注高品质网络工具与前沿AI探索。"
+  keywords={['关于大肥鱼', '博客介绍', '独立博主', '技术评测团队', 'E-E-A-T实体']}
+  type="website"
+  canonicalPath="/about"
+>
+  <main class="main-content">
+      <div class="content-container">
+        <!-- Content Area -->
+        <section class="content-area" style="max-width: 860px; margin: 0 auto;">
+          <!-- 1. Profile Hero Card -->
+          <div class="card about-hero-card">
+            <div class="profile-avatar"><img src="images/deepseek-logo-white.svg" alt="DeepSeek Logo"></div>
+            <h1 class="profile-name">大肥鱼</h1>
+            <div class="profile-role">数字工具 / 技术博主</div>
+            <p class="profile-bio">
+              这里持续更新我的 2026机场推荐、科学上网与 Clash 客户端配置指南，兼顾主流海外流媒体解锁及前沿 AI 生产力实战。专注高品质原创干货，希望对你的探索与工作有所帮助。
+            </p>
+          </div>
+
+          <!-- 2. Skills Grid Card -->
+          <div class="card skills-card">
+            <div class="section-header" style="margin-bottom: 8px;">
+              <h2 class="section-title" style="font-size: 18px;">
+                <i class="fa-solid fa-microchip"></i>
+                技能栈与常备武器
+              </h2>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 13.5px;">
+              日常工作与业余创作中深度依赖的技术与生产力装备：
+            </p>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <i class="fa-brands fa-python" style="color: #38bdf8;"></i>
+                <span>Python</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-js" style="color: #facc15;"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-apple" style="color: var(--text-primary);"></i>
+                <span>macOS</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-linux" style="color: #fb923c;"></i>
+                <span>Linux</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-docker" style="color: #38bdf8;"></i>
+                <span>Docker</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-git-alt" style="color: #f87171;"></i>
+                <span>Git</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-solid fa-gem" style="color: #a855f7;"></i>
+                <span>Obsidian</span>
+              </div>
+              <div class="skill-item">
+                <i class="fa-brands fa-figma" style="color: #ec4899;"></i>
+                <span>Figma</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Timeline: My Story -->
+          <div class="card timeline-card">
+            <div class="section-header" style="margin-bottom: 8px;">
+              <h2 class="section-title" style="font-size: 18px;">
+                <i class="fa-solid fa-clock-rotate-left" style="color: var(--accent-primary);"></i>
+                我的故事
+              </h2>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 13.5px; margin-bottom: 6px;">
+              记录博客与工具折腾的过程：
+            </p>
+            <div class="timeline">
+              <!-- Item 2026 -->
+              <div class="timeline-item">
+                <div class="timeline-dot"><i class="fa-solid fa-sparkles"></i></div>
+                <div class="timeline-box">
+                  <div class="timeline-header">
+                    <span class="timeline-year-badge current">
+                      <i class="fa-solid fa-circle-dot"></i> 2026
+                    </span>
+                  </div>
+                  <div class="timeline-content">
+                    <h4>AI 工具与全网节点测速</h4>
+                    <p>
+                      DeepSeek、ChatGPT 等工具已经深入日常工作流程。今年博客将持续整理实测好用的节点推荐、AI 实用技巧与常用工具清单，只写自己实际用过的真实体验。
+                    </p>
+                    <div class="timeline-tags">
+                      <span class="timeline-tag-pill"><i class="fa-solid fa-robot"></i> DeepSeek / AI</span>
+                      <span class="timeline-tag-pill"><i class="fa-solid fa-gauge-high"></i> 节点评测</span>
+                      <span class="timeline-tag-pill"><i class="fa-solid fa-toolbox"></i> 实用工具箱</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2025 -->
+              <div class="timeline-item">
+                <div class="timeline-dot"><i class="fa-solid fa-bolt"></i></div>
+                <div class="timeline-box">
+                  <div class="timeline-header">
+                    <span class="timeline-year-badge">
+                      <i class="fa-regular fa-calendar"></i> 2025
+                    </span>
+                  </div>
+                  <div class="timeline-content">
+                    <h4>节点评测与流媒体解锁</h4>
+                    <p>
+                      陆续测试了数十家不同线路的节点服务，梳理出晚高峰稳定、不虚标的靠谱选择。同时整理了 Netflix、Disney+ 等流媒体的分流规则与全区解锁方案。
+                    </p>
+                    <div class="timeline-tags">
+                      <span class="timeline-tag-pill"><i class="fa-solid fa-shield-halved"></i> 节点评测</span>
+                      <span class="timeline-tag-pill"><i class="fa-solid fa-tv"></i> 流媒体解锁</span>
+                      <span class="timeline-tag-pill"><i class="fa-solid fa-network-wired"></i> 规则分流</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2024 -->
+              <div class="timeline-item">
+                <div class="timeline-dot"><i class="fa-solid fa-rocket"></i></div>
+                <div class="timeline-box">
+                  <div class="timeline-header">
+                    <span class="timeline-year-badge">
+                      <i class="fa-regular fa-calendar"></i> 2024
+                    </span>
+                  </div>
+                  <div class="timeline-content">
+                    <h4>建立博客，记录配置与工具使用</h4>
+                    <p>
+                      注册了 <code>dafeiyu.blog</code> 域名，搭建了这个博客。起初主要是把 Clash Verge、小火箭等常用客户端的配置方法与常见问题整理成文，方便自己查阅，也分享给需要的朋友。
+                    </p>
+                    <div class="timeline-tags">
+                      <span class="timeline-tag-pill"><i class="fa-solid fa-globe"></i> dafeiyu.blog</span>
+                      <span class="timeline-tag-pill"><i class="fa-solid fa-book-open"></i> Clash 教程</span>
+                      <span class="timeline-tag-pill"><i class="fa-solid fa-wrench"></i> 网络工具</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+</BaseLayout>

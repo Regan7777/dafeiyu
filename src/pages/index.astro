@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts');
+
+// Featured posts
+const featuredSlugs = ['clash-verge', 'shenxing'];
+const featuredPosts = featuredSlugs
+  .map(slug => allPosts.find(p => p.id === slug || (p as any).slug === slug))
+  .filter(Boolean);
+
+// Hot posts (Top 5)
+const hotSlugs = ['clash-verge', 'shenxing', 'streaming-unlock', 'deepseek-tutorial', 'chrome-extensions'];
+const hotPosts = hotSlugs
+  .map(slug => allPosts.find(p => p.id === slug || (p as any).slug === slug))
+  .filter(Boolean);
+
+// All unique tags
+const allTags = Array.from(new Set(allPosts.flatMap(p => p.data.keywords))).slice(0, 15);
+---
+
+<BaseLayout
+  title="大肥鱼 · 博客 - 2026机场推荐与前沿技术实战"
+  description="这里持续更新我的2026机场推荐、科学上网与Clash客户端配置指南，兼顾主流海外流媒体解锁及前沿AI生产力实战。专注高品质原创干货。"
+  keywords={['2026机场推荐', '科学上网', 'Clash Verge Rev', 'Sing-box', '海外流媒体解锁', 'DeepSeek教程', '大肥鱼博客']}
+  type="website"
+  canonicalPath="/"
+>
+  <main class="main-content">
+    <div class="content-container">
+      <!-- Center Feed -->
+      <section class="content-area">
+        <!-- 1. Hero Banner (Cleaned of native emojis) -->
+        <div class="hero-banner">
+          <h1 class="hero-title">
+            Hi, 欢迎来到大肥鱼
+          </h1>
+          <p class="hero-subtitle">
+            这里持续更新我的 2026机场推荐、科学上网与 Clash 客户端配置指南，兼顾主流海外流媒体解锁及前沿 AI 生产力实战。专注高品质原创干货，希望对你的探索与工作有所帮助。
+          </p>
+          <div class="hero-actions">
+            <a href="#latestArticles" class="btn btn-primary">
+              <i class="fa-solid fa-compass"></i>
+              浏览文章
+            </a>
+            <a href="/about" class="btn btn-outline">
+              <i class="fa-regular fa-id-badge"></i>
+              了解作者
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Featured Section (Cleaned of native emojis) -->
+        <section class="featured-section">
+          <div class="section-header">
+            <h2 class="section-title">
+              <i class="fa-solid fa-star" style="color: var(--accent-primary);"></i>
+              精选文章
+            </h2>
+          </div>
+          <div class="featured-grid">
+            {featuredPosts.map((post) => (
+              <article class="card featured-card">
+                <div class="featured-top">
+                  <span class="badge-featured">
+                    <i class="fa-solid fa-bolt"></i> 精选
+                  </span>
+                  <span class={`tag-pill ${post.data.categoryClass}`}>{post.data.category}</span>
+                </div>
+                <h3 class="card-title">
+                  <a href={`/article/${post.id}`}>{post.data.title}</a>
+                </h3>
+                <p class="card-excerpt">{post.data.lead}</p>
+                <div class="card-footer">
+                  <div class="card-meta">
+                    <span><i class="fa-regular fa-calendar"></i> {post.data.date}</span>
+                    <span><i class="fa-regular fa-clock"></i> {post.data.readingTime}</span>
+                    <span><i class="fa-regular fa-eye"></i> {post.data.views}</span>
+                  </div>
+                  <a href={`/article/${post.id}`} class="btn-link">
+                    阅读全文 <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <!-- 3. Latest Articles Section -->
+        <section class="articles-section" id="latestArticles">
+          <div class="section-header">
+            <h2 class="section-title">
+              <i class="fa-regular fa-clock"></i>
+              <span id="articleSectionTitle">最新文章</span>
+            </h2>
+          </div>
+
+          <!-- Active Filter Notification Bar -->
+          <div class="active-filter-bar" id="activeFilterBar" style="display: none;">
+            <div class="filter-info">
+              <i class="fa-solid fa-filter"></i>
+              <span>当前筛选：<strong id="filterName">全部</strong></span>
+              <span class="filter-count" id="filterCount">（共 {allPosts.length} 篇文章）</span>
+            </div>
+            <button class="filter-clear-btn" id="filterClearBtn">
+              <i class="fa-solid fa-xmark"></i> 清除筛选
+            </button>
+          </div>
+
+          <!-- Articles Grid -->
+          <div class="articles-grid" id="articlesGrid">
+            {allPosts.map((post) => (
+              <article
+                class="card article-card"
+                data-category={post.data.category}
+                data-tags={post.data.keywords.join(', ')}
+                data-title={post.data.title}
+                data-excerpt={post.data.lead}
+              >
+                <div class="article-card-header">
+                  <span class={`tag-pill ${post.data.categoryClass}`}>
+                    <i class={post.data.categoryIcon}></i> {post.data.category}
+                  </span>
+                </div>
+                <h3 class="card-title">
+                  <a href={`/article/${post.id}`}>{post.data.title}</a>
+                </h3>
+                <p class="card-excerpt">{post.data.lead}</p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="/images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>{post.data.date}</span>
+                      <span>·</span>
+                      <span>{post.data.readingTime}</span>
+                    </div>
+                  </div>
+                  <a href={`/article/${post.id}`} class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </section>
+
+      <!-- Right Sidebar -->
+      <aside class="sidebar-right">
+        <!-- Hot Articles Widget -->
+        <div class="widget">
+          <h4 class="widget-title">
+            <i class="fa-solid fa-fire" style="color: #ef4444;"></i>
+            热门文章
+          </h4>
+          <div class="hot-list">
+            {hotPosts.map((post, idx) => (
+              <div class="hot-item">
+                <span class="hot-rank">0{idx + 1}</span>
+                <div class="hot-content">
+                  <a href={`/article/${post.id}`} class="hot-title">{post.data.title}</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Tags Cloud Widget -->
+        <div class="widget" id="tagsWidget">
+          <h4 class="widget-title">
+            <i class="fa-solid fa-tags" style="color: var(--accent-primary);"></i>
+            热门标签
+          </h4>
+          <div class="tag-cloud">
+            {allTags.map(tag => (
+              <a href={`/tags?tag=${encodeURIComponent(tag)}`} class="tag-cloud-item">{tag}</a>
+            ))}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Client-side filter & search script -->
+  <script is:inline>
+    function initFilters() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const catParam = urlParams.get('category');
+      const searchParam = urlParams.get('search');
+
+      const filterBar = document.getElementById('activeFilterBar');
+      const filterName = document.getElementById('filterName');
+      const filterCount = document.getElementById('filterCount');
+      const filterClearBtn = document.getElementById('filterClearBtn');
+      const cards = document.querySelectorAll('.article-card');
+
+      function applyFilter(category, query) {
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          const cardTitle = (card.getAttribute('data-title') || '').toLowerCase();
+          const cardExcerpt = (card.getAttribute('data-excerpt') || '').toLowerCase();
+          const cardTags = (card.getAttribute('data-tags') || '').toLowerCase();
+
+          let matchCat = !category || cardCat === category;
+          let matchQuery = true;
+          if (query) {
+            const q = query.toLowerCase();
+            matchQuery = cardTitle.includes(q) || cardExcerpt.includes(q) || cardTags.includes(q);
+          }
+
+          if (matchCat && matchQuery) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (category || query) {
+          if (filterBar) filterBar.style.display = 'flex';
+          if (filterName) filterName.textContent = category || `搜索: ${query}`;
+          if (filterCount) filterCount.textContent = `（共 ${visibleCount} 篇文章）`;
+        } else {
+          if (filterBar) filterBar.style.display = 'none';
+        }
+      }
+
+      if (filterClearBtn) {
+        filterClearBtn.addEventListener('click', () => {
+          window.history.replaceState({}, '', '/');
+          applyFilter(null, null);
+        });
+      }
+
+      if (catParam || searchParam) {
+        applyFilter(catParam, searchParam);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFilters);
+    } else {
+      initFilters();
+    }
+  </script>
+</BaseLayout>

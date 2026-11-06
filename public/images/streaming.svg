@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" rx="28" fill="#141414" />
+  <!-- Netflix Red N Ribbon -->
+  <polygon points="42,32 54,32 54,96 42,96" fill="#b91c1c" />
+  <polygon points="74,32 86,32 86,96 74,96" fill="#b91c1c" />
+  <polygon points="42,32 54,32 86,96 74,96" fill="#e50914" />
+</svg>

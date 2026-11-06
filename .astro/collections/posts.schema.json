@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "categoryClass": {
+      "default": "tag-proxy",
+      "type": "string"
+    },
+    "categoryIcon": {
+      "default": "fa-solid fa-paper-plane",
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "readingTime": {
+      "type": "string"
+    },
+    "views": {
+      "default": "2.5k",
+      "type": "string"
+    },
+    "lead": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "keywords": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "faqs": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string"
+          },
+          "a": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "q",
+          "a"
+        ]
+      }
+    },
+    "relatedArticles": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prevId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "nextId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "category",
+    "date",
+    "readingTime",
+    "lead",
+    "description"
+  ]
+}

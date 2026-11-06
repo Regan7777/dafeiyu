@@ -1,0 +1,27 @@
+{
+  "name": "dafeiyu-blog",
+  "version": "2.0.0",
+  "description": "大肥鱼 · 2026 技术博客与机场推荐指南 (Astro SSG 纯静态架构)",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "node scripts/verify-site.js && astro build",
+    "preview": "astro preview",
+    "audit": "node scripts/verify-site.js",
+    "gen:llms": "node scripts/generate-llms-txt.js"
+  },
+  "keywords": [
+    "astro",
+    "blog",
+    "ssg",
+    "2026机场推荐",
+    "科学上网",
+    "clash-verge",
+    "sing-box"
+  ],
+  "author": "大肥鱼",
+  "license": "MIT",
+  "dependencies": {
+    "astro": "^7.4.5"
+  }
+}

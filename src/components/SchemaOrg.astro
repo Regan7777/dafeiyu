@@ -1,0 +1,122 @@
+---
+interface Props {
+  type: 'website' | 'article';
+  title: string;
+  description: string;
+  datePublished?: string;
+  dateModified?: string;
+  category?: string;
+  url: string;
+  faqs?: Array<{ q: string; a: string }>;
+}
+
+const {
+  type,
+  title,
+  description,
+  datePublished = '2026-02-18',
+  dateModified = '2026-02-18',
+  category,
+  url,
+  faqs = []
+} = Astro.props;
+
+const siteUrl = 'https://dafeiyu.blog';
+const canonicalUrl = `${siteUrl}${url}`;
+
+const schemaList: any[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    'name': '大肥鱼 · 博客',
+    'url': siteUrl,
+    'description': '2026机场推荐、科学上网与Clash客户端配置指南、主流海外流媒体解锁及前沿AI生产力实战。',
+    'publisher': {
+      '@type': 'Organization',
+      'name': '大肥鱼',
+      'url': siteUrl,
+      'logo': {
+        '@type': 'ImageObject',
+        'url': `${siteUrl}/images/deepseek-logo.svg`
+      }
+    }
+  }
+];
+
+if (type === 'article') {
+  // 1. BlogPosting Schema
+  schemaList.push({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    'mainEntityOfPage': {
+      '@type': 'WebPage',
+      '@id': canonicalUrl
+    },
+    'headline': title,
+    'description': description,
+    'datePublished': datePublished,
+    'dateModified': dateModified,
+    'author': {
+      '@type': 'Person',
+      'name': '大肥鱼',
+      'url': `${siteUrl}/about`
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': '大肥鱼',
+      'url': siteUrl,
+      'logo': {
+        '@type': 'ImageObject',
+        'url': `${siteUrl}/images/deepseek-logo.svg`
+      }
+    },
+    'articleSection': category || '技术教程'
+  });
+
+  // 2. BreadcrumbList Schema
+  schemaList.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': '首页',
+        'item': siteUrl
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': category || '专栏',
+        'item': `${siteUrl}/?category=${encodeURIComponent(category || '')}`
+      },
+      {
+        '@type': 'ListItem',
+        'position': 3,
+        'name': title,
+        'item': canonicalUrl
+      }
+    ]
+  });
+
+  // 3. FAQPage Schema
+  if (faqs && faqs.length > 0) {
+    schemaList.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': faqs.map(f => ({
+        '@type': 'Question',
+        'name': f.q,
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': f.a
+        }
+      }))
+    });
+  }
+}
+---
+
+{schemaList.map(item => (
+  <script type="application/ld+json" set:html={JSON.stringify(item)} />
+))}
