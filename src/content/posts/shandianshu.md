@@ -3,7 +3,7 @@ title: "闪电鼠机场深度评测：15元起限时特惠、全IPLC专线直连
 category: "机场推荐"
 categoryClass: "tag-airport"
 categoryIcon: "fa-solid fa-plane-departure"
-date: "2026-11-03"
+date: "2026-11-04"
 readingTime: "10分钟阅读"
 views: "5,620 次阅读"
 lead: "闪电鼠网络服务深度评测：解析其全线 IPLC 专线直连架构与原生双 ISP 住宅出口配置，盘点轻量入门、终身不限时随心包资费，提供晚高峰测速与防封锁选购指南。"

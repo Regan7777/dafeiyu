@@ -3,7 +3,7 @@ title: "神行加速机场全面测评：19.88元起全IPLC专线、96元年付�
 category: "机场推荐"
 categoryClass: "tag-airport"
 categoryIcon: "fa-solid fa-plane-departure"
-date: "2026-11-04"
+date: "2026-11-06"
 readingTime: "10分钟阅读"
 views: "7,430 次阅读"
 lead: "神行加速全面实测指南：评测其全 IPLC 内网专线网络拓扑、年付特惠方案与终身按量不限时套餐，实测晚高峰 4K/8K 视频流畅度与 ChatGPT 纯净解锁能力。"
