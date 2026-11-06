@@ -153,3 +153,4 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 fs.writeFileSync('src/pages/about.astro', aboutAstro, 'utf8');
 console.log('src/pages/about.astro written successfully!');
+

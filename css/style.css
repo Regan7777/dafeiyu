@@ -123,12 +123,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  opacity: 0;
-  transition: opacity 0.35s ease, background-color 0.25s ease, color 0.25s ease;
-}
-
-body.loaded {
-  opacity: 1;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 a {
@@ -194,6 +189,7 @@ button, input {
   right: 0;
   height: 60px;
   background: var(--header-bg);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   padding: 0 16px;
@@ -252,6 +248,7 @@ button, input {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   z-index: 800;
 }

@@ -92,3 +92,4 @@ ${p.body.slice(0, 3000)}
 
 fs.writeFileSync('public/llms-full.txt', llmsFull, 'utf8');
 console.log('public/llms-full.txt generated successfully!');
+

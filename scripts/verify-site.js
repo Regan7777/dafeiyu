@@ -96,3 +96,4 @@ if (brokenLinks.length || orphanPosts.length || emojiIssues.length || lowFaqPost
 } else {
   console.log('\n🎉 ALL AUDIT CHECKS PASSED PERFECTLY!');
 }
+
