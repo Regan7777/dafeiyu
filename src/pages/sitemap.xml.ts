@@ -2,8 +2,10 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
 export const GET: APIRoute = async () => {
-  const posts = await getCollection('posts');
+  const rawPosts = await getCollection('posts');
+  const posts = rawPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
   const siteUrl = 'https://dafeiyu.blog';
+  const latestDate = posts.length > 0 ? posts[0].data.date : '2026-11-06';
 
   const staticPages = [
     { url: '/', priority: '1.0', changefreq: 'daily' },
@@ -16,7 +18,7 @@ export const GET: APIRoute = async () => {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${staticPages.map(p => `  <url>
     <loc>${siteUrl}${p.url}</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>${latestDate}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>
   </url>`).join('\n')}

@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="404 - 页面未找到"
+  description="抱歉，您访问的页面不存在或已被移除。"
+  type="website"
+  canonicalPath="/404"
+>
+  <main class="main-content">
+    <div class="content-container">
+      <section class="content-area" style="max-width: 760px; margin: 40px auto 60px; text-align: center;">
+        <div class="card" style="padding: 60px 32px; border-radius: 20px;">
+          <div style="font-size: 80px; font-weight: 900; line-height: 1; color: var(--primary-color, #4D6BFE); margin-bottom: 16px; letter-spacing: -2px;">
+            404
+          </div>
+          <h1 style="font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px;">
+            抱歉，您访问的页面不存在或已被移除
+          </h1>
+          <p style="color: var(--text-secondary); font-size: 15px; max-width: 480px; margin: 0 auto 32px; line-height: 1.6;">
+            您可能输入了错误的网址，或者该页面已被重新整理或迁移。您可以返回首页探索最新文章，或直接浏览以下核心专栏。
+          </p>
+
+          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;">
+            <a href="/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--primary-color, #4D6BFE); color: #fff; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 14.5px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+              <i class="fa-solid fa-house"></i>
+              返回博客首页
+            </a>
+            <a href="/tools" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--card-bg, #f1f5f9); color: var(--text-primary); border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 14.5px; border: 1px solid var(--border-color, #e2e8f0); transition: all 0.2s ease;">
+              <i class="fa-solid fa-toolbox"></i>
+              实用工具箱
+            </a>
+          </div>
+
+          <div style="border-top: 1px solid var(--border-color, #e2e8f0); padding-top: 28px;">
+            <div style="font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 16px;">
+              推荐专栏分类直达
+            </div>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+              <a href="/?category=科学上网" style="padding: 8px 16px; background: rgba(77, 107, 254, 0.08); color: #4D6BFE; border-radius: 8px; font-size: 13.5px; font-weight: 500; text-decoration: none;">
+                <i class="fa-solid fa-shield-halved" style="margin-right: 4px;"></i> 科学上网
+              </a>
+              <a href="/?category=机场推荐" style="padding: 8px 16px; background: rgba(245, 158, 11, 0.08); color: #d97706; border-radius: 8px; font-size: 13.5px; font-weight: 500; text-decoration: none;">
+                <i class="fa-solid fa-paper-plane" style="margin-right: 4px;"></i> 机场推荐
+              </a>
+              <a href="/?category=海外流媒体" style="padding: 8px 16px; background: rgba(236, 72, 153, 0.08); color: #db2777; border-radius: 8px; font-size: 13.5px; font-weight: 500; text-decoration: none;">
+                <i class="fa-solid fa-tv" style="margin-right: 4px;"></i> 海外流媒体
+              </a>
+              <a href="/?category=AI工具与实战" style="padding: 8px 16px; background: rgba(16, 185, 129, 0.08); color: #059669; border-radius: 8px; font-size: 13.5px; font-weight: 500; text-decoration: none;">
+                <i class="fa-solid fa-robot" style="margin-right: 4px;"></i> AI工具与实战
+              </a>
+              <a href="/?category=实用工具" style="padding: 8px 16px; background: rgba(139, 92, 246, 0.08); color: #7c3aed; border-radius: 8px; font-size: 13.5px; font-weight: 500; text-decoration: none;">
+                <i class="fa-solid fa-wrench" style="margin-right: 4px;"></i> 实用工具
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</BaseLayout>

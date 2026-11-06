@@ -8,6 +8,7 @@
     "build": "node scripts/verify-site.js && astro build",
     "preview": "astro preview",
     "audit": "node scripts/verify-site.js",
+    "audit:launch": "node scripts/launch-audit.js",
     "gen:llms": "node scripts/generate-llms-txt.js"
   },
   "keywords": [
