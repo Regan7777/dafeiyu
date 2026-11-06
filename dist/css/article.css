@@ -293,10 +293,25 @@
    Table of Contents (TOC) Right Sidebar
    ========================================================================== */
 .toc-container {
-  width: var(--right-sidebar-width);
+  width: var(--right-sidebar-width, 240px);
+  flex-shrink: 0;
   position: sticky;
   top: 80px;
   align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.toc-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.toc-container::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
 }
 
 .toc-card {
@@ -413,7 +428,13 @@
 /* ==========================================================================
    Responsive Breakpoints for Article
    ========================================================================== */
-@media (max-width: 1080px) {
+@media (max-width: 1200px) and (min-width: 961px) {
+  .toc-container {
+    width: 210px;
+  }
+}
+
+@media (max-width: 960px) {
   .toc-container {
     display: none;
   }
