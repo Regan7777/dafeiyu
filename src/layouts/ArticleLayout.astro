@@ -31,9 +31,6 @@ const postSlug = post.id || (post as any).slug;
   dateModified={post.data.date}
   faqs={post.data.faqs}
 >
-  <!-- Reading Progress Bar (顶部阅读进度条) -->
-  <div class="reading-progress" id="readingProgress"></div>
-
   <main class="main-content">
     <div class="content-container">
       <!-- Article Main Column -->
@@ -191,16 +188,36 @@ const postSlug = post.id || (post as any).slug;
       headings.forEach(h => observer.observe(h));
     }
 
-    // Reading Progress Bar
-    const progressBar = document.getElementById('readingProgress');
+    // Reading Progress Bar (Fixed Top with Cross-Browser scroll calculation)
+    const progressBar = document.getElementById('readingProgress') || document.querySelector('.reading-progress');
     if (progressBar) {
-      window.addEventListener('scroll', () => {
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        if (docHeight > 0) {
-          const scrolled = (window.scrollY / docHeight) * 100;
-          progressBar.style.width = `${Math.min(scrolled, 100)}%`;
+      function updateReadingProgress() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const scrollHeight = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+        if (scrollHeight > 0) {
+          const scrolled = Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100));
+          progressBar.style.width = `${scrolled}%`;
         }
-      }, { passive: true });
+      }
+      window.addEventListener('scroll', updateReadingProgress, { passive: true });
+      window.addEventListener('resize', updateReadingProgress, { passive: true });
+      updateReadingProgress();
+    }
+
+    // Reading Progress Bar (Fixed Top with Cross-Browser scroll calculation)
+    const progressBar = document.getElementById('readingProgress') || document.querySelector('.reading-progress');
+    if (progressBar) {
+      function updateReadingProgress() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const scrollHeight = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+        if (scrollHeight > 0) {
+          const scrolled = Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100));
+          progressBar.style.width = `${scrolled}%`;
+        }
+      }
+      window.addEventListener('scroll', updateReadingProgress, { passive: true });
+      window.addEventListener('resize', updateReadingProgress, { passive: true });
+      updateReadingProgress();
     }
 
     if (document.readyState === 'loading') {

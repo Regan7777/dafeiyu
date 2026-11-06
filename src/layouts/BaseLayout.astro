@@ -89,6 +89,8 @@ const pageTitle = title.includes('大肥鱼') ? title : `${title} - 大肥鱼 ·
   </script>
 </head>
 <body>
+  {type === 'article' && <div class="reading-progress" id="readingProgress"></div>}
+
   <!-- Mobile Header -->
   <header class="mobile-header">
     <div class="brand">
@@ -106,8 +108,8 @@ const pageTitle = title.includes('大肥鱼') ? title : `${title} - 大肥鱼 ·
     </div>
   </header>
 
-  <!-- App Container -->
-  <div class="app-layout">
+  <!-- App Container (Matches original .site-wrapper flex architecture) -->
+  <div class="site-wrapper">
     <!-- Left Sidebar -->
     <aside class="sidebar-left" id="sidebarLeft">
       <!-- Logo Section -->

@@ -51,43 +51,7 @@ const allTags = Array.from(new Set(allPosts.flatMap(p => p.data.keywords))).slic
           </div>
         </div>
 
-        <!-- 2. Featured Section (Cleaned of native emojis) -->
-        <section class="featured-section">
-          <div class="section-header">
-            <h2 class="section-title">
-              <i class="fa-solid fa-star" style="color: var(--accent-primary);"></i>
-              精选文章
-            </h2>
-          </div>
-          <div class="featured-grid">
-            {featuredPosts.map((post) => (
-              <article class="card featured-card">
-                <div class="featured-top">
-                  <span class="badge-featured">
-                    <i class="fa-solid fa-bolt"></i> 精选
-                  </span>
-                  <span class={`tag-pill ${post.data.categoryClass}`}>{post.data.category}</span>
-                </div>
-                <h3 class="card-title">
-                  <a href={`/article/${post.id}`}>{post.data.title}</a>
-                </h3>
-                <p class="card-excerpt">{post.data.lead}</p>
-                <div class="card-footer">
-                  <div class="card-meta">
-                    <span><i class="fa-regular fa-calendar"></i> {post.data.date}</span>
-                    <span><i class="fa-regular fa-clock"></i> {post.data.readingTime}</span>
-                    <span><i class="fa-regular fa-eye"></i> {post.data.views}</span>
-                  </div>
-                  <a href={`/article/${post.id}`} class="btn-link">
-                    阅读全文 <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <!-- 3. Latest Articles Section -->
+        <!-- 2. Latest Articles Section -->
         <section class="articles-section" id="latestArticles">
           <div class="section-header">
             <h2 class="section-title">
@@ -158,6 +122,31 @@ const allTags = Array.from(new Set(allPosts.flatMap(p => p.data.keywords))).slic
                 <span class="hot-rank">0{idx + 1}</span>
                 <div class="hot-content">
                   <a href={`/article/${post.id}`} class="hot-title">{post.data.title}</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Featured Articles Widget (精选文章放置于侧边栏热门标签区) -->
+        <div class="widget" id="featuredWidget">
+          <h4 class="widget-title">
+            <i class="fa-solid fa-star" style="color: var(--accent-primary);"></i>
+            精选文章
+          </h4>
+          <div class="featured-widget-list">
+            {featuredPosts.map((post) => (
+              <div class="featured-widget-card">
+                <div class="featured-widget-top">
+                  <span class="badge-featured-sm">
+                    <i class="fa-solid fa-bolt"></i> 精选
+                  </span>
+                  <span class={`tag-pill-sm ${post.data.categoryClass}`}>{post.data.category}</span>
+                </div>
+                <a href={`/article/${post.id}`} class="featured-widget-title">{post.data.title}</a>
+                <div class="featured-widget-footer">
+                  <span><i class="fa-regular fa-calendar"></i> {post.data.date}</span>
+                  <span><i class="fa-regular fa-clock"></i> {post.data.readingTime}</span>
                 </div>
               </div>
             ))}
