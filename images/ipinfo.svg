@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="ipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#ipGrad)" />
+  <!-- Globe Grid -->
+  <circle cx="64" cy="64" r="38" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.4" />
+  <ellipse cx="64" cy="64" rx="20" ry="38" fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.5" />
+  <line x1="26" y1="64" x2="102" y2="64" stroke="#ffffff" stroke-width="2.5" opacity="0.5" />
+  <!-- Location Pin Overlay -->
+  <path d="M64 36 C55 36 48 43 48 52 C48 64 64 82 64 82 C64 82 80 64 80 52 C80 43 73 36 64 36 Z" fill="#ef4444" stroke="#ffffff" stroke-width="2.5" />
+  <circle cx="64" cy="52" r="5" fill="#ffffff" />
+</svg>

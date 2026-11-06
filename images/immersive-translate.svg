@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" rx="28" fill="#1e1b4b" />
+  <!-- Origami Crane Shapes -->
+  <!-- Left Wing Blue -->
+  <polygon points="32,78 64,36 64,82" fill="#3b82f6" />
+  <!-- Right Wing Violet -->
+  <polygon points="96,78 64,36 64,82" fill="#8b5cf6" />
+  <!-- Head Yellow -->
+  <polygon points="64,36 48,26 56,42" fill="#f59e0b" />
+  <!-- Body/Tail Cyan -->
+  <polygon points="64,82 64,102 52,90" fill="#06b6d4" />
+</svg>

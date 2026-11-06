@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2024年最值得安装的10个Chrome扩展插件 - 大肥鱼 (dafeiyu.blog)</title>
+  <link rel="icon" type="image/svg+xml" href="images/deepseek-logo.svg">
+  
+  <!-- Google Fonts: Inter & Noto Sans SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Highlight.js Theme (Adaptive) -->
+  <link id="hljsTheme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/article.css">
+
+  <!-- Theme Script (Prevent FOUC) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      if (savedTheme === 'dark') {
+        const hljsLink = document.getElementById('hljsTheme');
+        if (hljsLink) hljsLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css';
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress"></div>
+
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div class="brand">
+      <div class="logo-avatar" style="width: 32px; height: 32px;"><img src="images/deepseek-logo-white.svg" alt="DeepSeek Logo"></div>
+      <span class="brand-title" style="font-size: 16px;">大肥鱼</span>
+    </div>
+    <div class="mobile-header-actions">
+      <button class="mobile-theme-btn" id="mobileThemeToggle" aria-label="切换黑白模式" title="切换黑白模式">
+        <i class="fa-solid fa-sun theme-icon-sun"></i>
+        <i class="fa-solid fa-moon theme-icon-moon"></i>
+      </button>
+      <button class="mobile-menu-btn" id="sidebarToggle" aria-label="打开菜单">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="site-wrapper">
+    <!-- Left Sidebar (Reused) -->
+    <aside class="sidebar-left">
+      <!-- Logo Section -->
+      <a href="index.html" class="sidebar-brand">
+        <div class="logo-avatar"><img src="images/deepseek-logo-white.svg" alt="DeepSeek Logo"></div>
+        <div class="brand-text">
+          <span class="brand-title">大肥鱼</span>
+          <span class="brand-subtitle">dafeiyu.blog</span>
+        </div>
+      </a>
+
+      <!-- Search Box -->
+      <div class="sidebar-search">
+        <div class="search-inner">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" class="search-input" id="searchInput" placeholder="搜索文章..." autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">导航</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html">
+              <i class="fa-solid fa-house"></i>
+              <span>首页</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="index.html#latestArticles">
+              <i class="fa-regular fa-file-lines"></i>
+              <span>文章</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="tools.html">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <span>工具</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="tags.html">
+              <i class="fa-solid fa-tags"></i>
+              <span>标签</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html">
+              <i class="fa-regular fa-user"></i>
+              <span>关于</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Category List -->
+      <div class="sidebar-categories">
+        <div class="nav-section-title">文章分类</div>
+        <ul class="category-list">
+          <li class="category-item" data-category="科学上网">
+            <a href="index.html?category=科学上网">
+              <span><i class="fa-solid fa-paper-plane" style="color: #6366f1; margin-right: 8px;"></i>科学上网</span>
+              <span class="category-badge-count">8</span>
+            </a>
+          </li>
+          <li class="category-item" data-category="机场推荐">
+            <a href="index.html?category=机场推荐">
+              <span><i class="fa-solid fa-plane-departure" style="color: #f59e0b; margin-right: 8px;"></i>机场推荐</span>
+              <span class="category-badge-count">6</span>
+            </a>
+          </li>
+          <li class="category-item" data-category="流媒体">
+            <a href="index.html?category=流媒体">
+              <span><i class="fa-solid fa-tv" style="color: #ec4899; margin-right: 8px;"></i>流媒体</span>
+              <span class="category-badge-count">3</span>
+            </a>
+          </li>
+          <li class="category-item" data-category="AI使用">
+            <a href="index.html?category=AI使用">
+              <span><i class="fa-solid fa-robot" style="color: #10b981; margin-right: 8px;"></i>AI使用</span>
+              <span class="category-badge-count">4</span>
+            </a>
+          </li>
+          <li class="category-item" data-category="实用工具">
+            <a href="index.html?category=实用工具">
+              <span><i class="fa-solid fa-screwdriver-wrench" style="color: #3b82f6; margin-right: 8px;"></i>实用工具</span>
+              <span class="category-badge-count">3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Theme Switcher -->
+      <div class="sidebar-theme-wrapper">
+        <button class="theme-switch-btn" id="themeToggleBtn" aria-label="切换黑白模式" title="点击切换黑白模式">
+          <div class="theme-switch-left">
+            <i class="fa-solid fa-sun theme-icon-sun"></i>
+            <i class="fa-solid fa-moon theme-icon-moon"></i>
+            <span class="theme-mode-text">浅色模式</span>
+          </div>
+          <div class="theme-pill-track">
+            <div class="theme-pill-thumb"></div>
+          </div>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="content-container">
+        <!-- Article Main Content Column -->
+        <article class="content-area">
+          <!-- Breadcrumbs -->
+          <nav class="breadcrumbs" aria-label="面包屑导航">
+            <a href="index.html"><i class="fa-solid fa-house" style="font-size: 11px; margin-right: 4px;"></i>首页</a>
+            <span class="separator">/</span>
+            <a href="index.html?category=科学上网">科学上网</a>
+            <span class="separator">/</span>
+            <span class="current">2026 最新 Clash Verge Rev 详细配置与规则分流新手教程</span>
+          </nav>
+
+          <!-- Article Box Container -->
+          <div class="card article-card-main">
+            <!-- Article Header -->
+            <header class="article-header">
+              <div class="article-category">
+                <span class="tag-pill tag-proxy">
+                  <i class="fa-solid fa-paper-plane"></i> 科学上网
+                </span>
+              </div>
+              <h1 class="article-title">2026 最新 Clash Verge Rev 详细配置与规则分流新手教程</h1>
+              <div class="article-meta">
+                <span class="article-meta-item">
+                  <i class="fa-regular fa-user"></i> 大肥鱼
+                </span>
+                <span class="article-meta-item">
+                  <i class="fa-regular fa-calendar"></i> 2026-02-18
+                </span>
+                <span class="article-meta-item">
+                  <i class="fa-regular fa-clock"></i> 15分钟阅读
+                </span>
+                <span class="article-meta-item">
+                  <i class="fa-regular fa-eye"></i> 6,820 次阅读
+                </span>
+              </div>
+            </header>
+
+            <!-- Article Body -->
+            <div class="article-content">
+              <p class="article-lead">
+                在科学上网客户端生态中，Clash Verge Rev 凭借现代跨平台的 Tauri 架构、低内存占用以及对开源 Mihomo（Clash.Meta）内核的原生支持，已成为当前最受推崇的桌面代理工具。本文手把手从零开始，带你完成从客户端安装、机场订阅导入、高级分流规则调教到 TUN 虚拟网卡防 DNS 泄露的全流程实战。
+              </p>
+
+              <h2 id="section-1">一、为什么选择 Clash Verge Rev？</h2>
+              <p>自原版 Clash for Windows（CFW）及 Clash 核心原作者停更以来，社区涌现了许多基于新内核的分支。其中，<strong>Clash Verge Rev</strong> 凭借以下核心优势脱颖而出：</p>
+              <ul>
+                <li><strong>现代技术底座：</strong>采用 Rust + Tauri 框架重构，相比于传统 Electron 臃肿的多进程架构，内存占用直降 60% 以上，冷启动秒开。</li>
+                <li><strong>完全兼容新内核：</strong>原生搭载最新的 Mihomo 内核，全面支持 Hysteria2、TUIC v5、Vless-Reality、WireGuard 等新一代抗封锁协议。</li>
+                <li><strong>优雅的规则扩展：</strong>内置直观的可视化脚本扩展（Merge / Script），分流规则管理更简单，不再需要手动硬改几十行 YAML 配置文件。</li>
+              </ul>
+
+              <h2 id="section-2">二、客户端下载与环境准备</h2>
+              <p>请认准官方开源仓库 Release 页面下载，切勿在来历不明的第三方站点下载被恶意篡改的安装包：</p>
+              <div class="table-wrapper">
+                <table class="article-table">
+                  <thead>
+                    <tr>
+                      <th>操作系统</th>
+                      <th>推荐安装版本</th>
+                      <th>适配架构说明</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Windows 10 / 11</strong></td>
+                      <td><code>Clash.Verge_x64-setup.exe</code></td>
+                      <td>64 位标准系统首选，亦提供便携绿色免安装版</td>
+                    </tr>
+                    <tr>
+                      <td><strong>macOS (Apple Silicon M系列)</strong></td>
+                      <td><code>Clash.Verge_aarch64.dmg</code></td>
+                      <td>Apple Silicon 原生编译版，功耗极低</td>
+                    </tr>
+                    <tr>
+                      <td><strong>macOS (Intel 旧款)</strong></td>
+                      <td><code>Clash.Verge_x64.dmg</code></td>
+                      <td>Intel x86 架构 Mac 专属安装包</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <blockquote>
+                <p><strong>💡 新手提示：</strong>安装完成后，建议在客户端左侧「设置（Settings）」中，勾选「开机自启（Auto Launch）」与「静默启动」，并确认「内核（Core）」模式显示为 <code>Mihomo</code>。</p>
+              </blockquote>
+
+              <h2 id="section-3">三、订阅导入与配置更新</h2>
+              <p>准备好机场服务商提供的 Clash 订阅链接，按照以下三步完成配置导入：</p>
+              <ol>
+                <li>点击左侧导航的 <strong>「订阅（Profiles）」</strong> 面板。</li>
+                <li>在顶部输入框粘贴你的订阅 URL，并为该配置起一个易于识别的名称（如 <code>主力专线机场</code>）。</li>
+                <li>点击右侧的 <strong>「导入」</strong> 按钮。导入成功后，右键点击该订阅卡片，选择 <strong>「定时更新」</strong> 并设置为 <code>12 小时</code>，确保节点状态时刻保持最新。</li>
+              </ol>
+
+              <h2 id="section-4">四、开启 TUN 虚拟网卡模式（解决全量软件代理与防 DNS 泄露）</h2>
+              <p>许多新手会遇到典型困惑：“为什么网页能打开 Google，但是命令行、Discord 或者终端工具却依然连不上？”这是因为普通模式只改了操作系统的 HTTP 局部代理，终端并不遵循。开启 <strong>TUN 模式</strong> 即可接管全系统网络层流量，配合 Fake-IP 彻底杜绝 DNS 污染。</p>
+
+              <h2 id="section-5">五、分流规则深度调教与常见报错排查</h2>
+              <p>在「代理」面板中合理配置节点策略组（PROXIES 手动选点，AUTO 自动低延迟切换），国内域名走 DIRECT 直连，海外走代理，退出软件时若遇到断网，排查 Windows 代理服务器开关即可秒级修复。</p>
+            </div>
+          </div>
+
+          <!-- Prev/Next Navigation Cards -->
+          <nav class="post-navigation">
+            <a href="article.html?id=windows-optimize" class="nav-card prev">
+              <span class="nav-label"><i class="fa-solid fa-arrow-left"></i> 上一篇</span>
+              <span class="nav-title">Windows 11 深度优化指南：打造清爽极客工作站</span>
+            </a>
+            <a href="article.html?id=sing-box-guide" class="nav-card next">
+              <span class="nav-label">下一篇 <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="nav-title">Sing-box 新一代全平台核心配置与规则集 (Rule-set) 实战进阶</span>
+            </a>
+          </nav>
+        </article>
+
+        <!-- Right Sticky TOC -->
+        <aside class="toc-container">
+          <div class="toc-card">
+            <div class="toc-title">
+              <i class="fa-solid fa-list-ul"></i>
+              <span>文章目录</span>
+            </div>
+            <nav class="toc-nav" id="tocNav">
+              <!-- Dynamically populated by js/main.js -->
+            </nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <!-- Highlight.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <!-- Articles Data -->
+  <script src="js/articles-data.js"></script>
+  <!-- Main Script -->
+  <script src="js/main.js"></script>
+  <!-- Back to Top Button (右下角一键置顶) -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="回到顶部" title="回到顶部">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+</body>
+</html>

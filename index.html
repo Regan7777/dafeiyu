@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大肥鱼 · 博客 - dafeiyu.blog</title>
+  <link rel="icon" type="image/svg+xml" href="images/deepseek-logo.svg">
+  
+  <!-- Google Fonts: Inter & Noto Sans SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Theme Script (Prevent FOUC) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+</head>
+<body>
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div class="brand">
+      <div class="logo-avatar" style="width: 32px; height: 32px;"><img src="images/deepseek-logo-white.svg" alt="DeepSeek Logo"></div>
+      <span class="brand-title" style="font-size: 16px;">大肥鱼</span>
+    </div>
+    <div class="mobile-header-actions">
+      <button class="mobile-theme-btn" id="mobileThemeToggle" aria-label="切换黑白模式" title="切换黑白模式">
+        <i class="fa-solid fa-sun theme-icon-sun"></i>
+        <i class="fa-solid fa-moon theme-icon-moon"></i>
+      </button>
+      <button class="mobile-menu-btn" id="sidebarToggle" aria-label="打开菜单">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="site-wrapper">
+    <!-- Left Sidebar -->
+    <aside class="sidebar-left">
+      <!-- Logo Section -->
+      <a href="index.html" class="sidebar-brand">
+        <div class="logo-avatar"><img src="images/deepseek-logo-white.svg" alt="DeepSeek Logo"></div>
+        <div class="brand-text">
+          <span class="brand-title">大肥鱼</span>
+          <span class="brand-subtitle">dafeiyu.blog</span>
+        </div>
+      </a>
+
+      <!-- Search Box -->
+      <div class="sidebar-search">
+        <div class="search-inner">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" class="search-input" id="searchInput" placeholder="搜索文章..." autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">导航</div>
+        <ul class="nav-list">
+          <li class="nav-item active">
+            <a href="index.html" id="navHome">
+              <i class="fa-solid fa-house"></i>
+              <span>首页</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#latestArticles" id="navArticles">
+              <i class="fa-regular fa-file-lines"></i>
+              <span>文章</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="tools.html">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <span>工具</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="tags.html">
+              <i class="fa-solid fa-tags"></i>
+              <span>标签</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html">
+              <i class="fa-regular fa-user"></i>
+              <span>关于</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Category List -->
+      <div class="sidebar-categories">
+        <div class="nav-section-title">文章分类</div>
+        <ul class="category-list" id="sidebarCategoryList">
+          <li class="category-item" data-category="科学上网">
+            <a href="javascript:void(0)">
+              <span><i class="fa-solid fa-paper-plane" style="color: #6366f1; margin-right: 8px;"></i>科学上网</span>
+              <span class="category-badge-count">8</span>
+            </a>
+          </li>
+          <li class="category-item" data-category="机场推荐">
+            <a href="javascript:void(0)">
+              <span><i class="fa-solid fa-plane-departure" style="color: #f59e0b; margin-right: 8px;"></i>机场推荐</span>
+              <span class="category-badge-count">6</span>
+            </a>
+          </li>
+          <li class="category-item" data-category="流媒体">
+            <a href="javascript:void(0)">
+              <span><i class="fa-solid fa-tv" style="color: #ec4899; margin-right: 8px;"></i>流媒体</span>
+              <span class="category-badge-count">3</span>
+            </a>
+          </li>
+          <li class="category-item" data-category="AI使用">
+            <a href="javascript:void(0)">
+              <span><i class="fa-solid fa-robot" style="color: #10b981; margin-right: 8px;"></i>AI使用</span>
+              <span class="category-badge-count">4</span>
+            </a>
+          </li>
+          <li class="category-item" data-category="实用工具">
+            <a href="javascript:void(0)">
+              <span><i class="fa-solid fa-screwdriver-wrench" style="color: #3b82f6; margin-right: 8px;"></i>实用工具</span>
+              <span class="category-badge-count">3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Theme Switcher -->
+      <div class="sidebar-theme-wrapper">
+        <button class="theme-switch-btn" id="themeToggleBtn" aria-label="切换黑白模式" title="点击切换黑白模式">
+          <div class="theme-switch-left">
+            <i class="fa-solid fa-sun theme-icon-sun"></i>
+            <i class="fa-solid fa-moon theme-icon-moon"></i>
+            <span class="theme-mode-text">浅色模式</span>
+          </div>
+          <div class="theme-pill-track">
+            <div class="theme-pill-thumb"></div>
+          </div>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="content-container">
+        <!-- Center Feed -->
+        <section class="content-area">
+          <!-- 1. Hero Banner -->
+          <div class="hero-banner">
+            <h1 class="hero-title">
+              Hi, 欢迎来到大肥鱼 👋
+            </h1>
+            <p class="hero-subtitle">
+              这里持续更新我的 2026机场推荐、科学上网与 Clash 客户端配置指南，兼顾主流海外流媒体解锁及前沿 AI 生产力实战。专注高品质原创干货，希望对你的探索与工作有所帮助。
+            </p>
+            <div class="hero-actions">
+              <a href="#latestArticles" class="btn btn-primary">
+                <i class="fa-solid fa-compass"></i>
+                浏览文章
+              </a>
+              <a href="about.html" class="btn btn-outline">
+                <i class="fa-regular fa-id-badge"></i>
+                了解作者
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. Featured Section -->
+          <section class="featured-section">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fa-solid fa-star"></i>
+                ✦ 精选文章
+              </h2>
+            </div>
+            <div class="featured-grid">
+              <!-- Featured Card 1 -->
+              <article class="card featured-card">
+                <div class="featured-top">
+                  <span class="badge-featured">
+                    <i class="fa-solid fa-bolt"></i> 精选
+                  </span>
+                  <span class="tag-pill tag-proxy">科学上网</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=clash-verge">2026 最新 Clash Verge Rev 详细配置与规则分流新手教程</a>
+                </h3>
+                <p class="card-excerpt">
+                  从客户端安装、订阅链接导入、TUN 虚拟网卡模式开启，到常见 DNS 泄露防范与国内直连/海外代理分流规则深度调教，零基础小白也能轻松上手。
+                </p>
+                <div class="card-footer">
+                  <div class="card-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 2026-02-18</span>
+                    <span><i class="fa-regular fa-clock"></i> 15分钟阅读</span>
+                    <span><i class="fa-regular fa-eye"></i> 6.8k 阅读</span>
+                  </div>
+                  <a href="article.html?id=clash-verge" class="btn-link">
+                    阅读全文 <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Featured Card 2 -->
+              <article class="card featured-card">
+                <div class="featured-top">
+                  <span class="badge-featured">
+                    <i class="fa-solid fa-sparkles"></i> 精选
+                  </span>
+                  <span class="tag-pill tag-airport">机场推荐</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=shenxing">神行加速机场全面测评：19.88元起全IPLC专线、96元年付特惠与不限时大包最新资费</a>
+                </h3>
+                <p class="card-excerpt">
+                  专注于全 IPLC 国际内网专线的高端加速服务商，单节点 2.5Gbps 峰值带宽，晚高峰 4K/8K 秒开，全 1.0x 真实倍率，支持 Nextin 与 Clash 一键导入。
+                </p>
+                <div class="card-footer">
+                  <div class="card-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 2026-11-04</span>
+                    <span><i class="fa-regular fa-clock"></i> 11分钟阅读</span>
+                    <span><i class="fa-regular fa-eye"></i> 7.4k 阅读</span>
+                  </div>
+                  <a href="article.html?id=shenxing" class="btn-link">
+                    阅读全文 <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- 3. Latest Articles Section -->
+          <section class="articles-section" id="latestArticles">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fa-regular fa-clock"></i>
+                <span id="articleSectionTitle">最新文章</span>
+              </h2>
+            </div>
+
+            <!-- Active Category / Tag Filter Notification Bar -->
+            <div class="active-filter-bar" id="activeFilterBar" style="display: none;">
+              <div class="filter-info">
+                <i class="fa-solid fa-filter"></i>
+                <span>当前筛选：<strong id="filterName">全部</strong></span>
+                <span class="filter-count" id="filterCount">（共 16 篇文章）</span>
+              </div>
+              <button class="filter-clear-btn" id="filterClearBtn">
+                <i class="fa-solid fa-xmark"></i> 清除筛选
+              </button>
+            </div>
+
+            <div class="articles-grid" id="articlesGrid">
+              <!-- === 分类 1: 科学上网 (4篇) === -->
+              <!-- Article 1 -->
+              <article class="card article-card" data-category="科学上网" data-tags="Clash, 科学上网, 规则分流, 客户端, Windows, macOS">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-proxy">科学上网</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=clash-verge">2026 最新 Clash Verge Rev 详细配置与规则分流新手教程</a>
+                </h3>
+                <p class="card-excerpt">
+                  从客户端安装、订阅链接导入、TUN 虚拟网卡模式开启，到常见 DNS 泄露防范与国内直连/海外代理分流规则深度调教，小白也能轻松上手。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-02-18</span>
+                      <span>·</span>
+                      <span>15分钟</span>
+                      <span>·</span>
+                      <span>6,820 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=clash-verge" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 2 -->
+              <article class="card article-card" data-category="科学上网" data-tags="Sing-box, 科学上网, 协议, 配置教程, 客户端">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-proxy">科学上网</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=sing-box-guide">Sing-box 新一代全平台核心配置与规则集 (Rule-set) 实战进阶</a>
+                </h3>
+                <p class="card-excerpt">
+                  解析 Sing-box 卓越的并发性能与内存控制，讲解 Outbounds 出站策略、Route 路由规则集导入，以及在 iOS、Android 与软路由上的通用配置方法。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-02-05</span>
+                      <span>·</span>
+                      <span>12分钟</span>
+                      <span>·</span>
+                      <span>4,130 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=sing-box-guide" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 3 -->
+              <article class="card article-card" data-category="科学上网" data-tags="Shadowrocket, 小火箭, iOS, 科学上网, 教程">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-proxy">科学上网</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=shadowrocket-ios">Shadowrocket (小火箭) iOS 新手配置、节点订阅与模块规则详解</a>
+                </h3>
+                <p class="card-excerpt">
+                  iPhone/iPad 上最经典的科学上网工具。手把手教你如何扫码导入节点、开启分流代理、配置防 DNS 污染与去广告 Module 模块。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-01-22</span>
+                      <span>·</span>
+                      <span>10分钟</span>
+                      <span>·</span>
+                      <span>5,690 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=shadowrocket-ios" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 4 -->
+              <article class="card article-card" data-category="科学上网" data-tags="科学上网, DNS泄露, TUN网卡, 避坑排障, 教程">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-proxy">科学上网</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=dns-leak-fix">科学上网避坑：DNS 泄露检测与 TUN 虚拟网卡失效排障手册</a>
+                </h3>
+                <p class="card-excerpt">
+                  为什么开启代理后仍无法解析海外地址？系统代理与 TUN 模式冲突、虚拟网卡驱动丢失、DNS 污染防范全流程排障手册。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-01-15</span>
+                      <span>·</span>
+                      <span>8分钟</span>
+                      <span>·</span>
+                      <span>3,420 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=dns-leak-fix" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 5: 科学上网 - Clash Mi -->
+              <article class="card article-card" data-category="科学上网" data-tags="Clash Mi, 科学上网, Mihomo内核, Flutter, 客户端, 教程">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-proxy">科学上网</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=clash-mi">2026 全平台轻量代理客户端 Clash Mi 详细安装与配置教程 (含 iOS / Android / Windows 下载)</a>
+                </h3>
+                <p class="card-excerpt">
+                  基于 Flutter 与 Mihomo (Clash.Meta) 满血内核开发的跨平台轻量代理工具，待机极低功耗，内置精致 Zashboard 仪表盘，详细演示各平台安装与订阅导入。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-03-01</span>
+                      <span>·</span>
+                      <span>12分钟</span>
+                      <span>·</span>
+                      <span>4,320 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=clash-mi" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 6: 科学上网 - 星拓 (Nextin) -->
+              <article class="card article-card" data-category="科学上网" data-tags="星拓, Nextin, Apple, iOS, Mac, Apple TV, 科学上网, 教程">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-proxy">科学上网</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=nextin-guide">Nextin (星拓) 苹果全生态免费代理客户端极简上手与机场一键接入指南 (iOS / Mac / Apple TV)</a>
+                </h3>
+                <p class="card-excerpt">
+                  专为 Apple 全生态打造的免费高性能客户端，App Store 免费获取，原生支持 VLESS/Reality 与 Hysteria2，首创站点识别码一键同步与 Apple TV 客厅大屏无感翻墙。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-03-02</span>
+                      <span>·</span>
+                      <span>10分钟</span>
+                      <span>·</span>
+                      <span>3,890 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=nextin-guide" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 7: 科学上网 - Karing -->
+              <article class="card article-card" data-category="科学上网" data-tags="Karing, sing-box, 科学上网, 全平台, Apple TV, 多协议, 教程">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-proxy">科学上网</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=karing-guide">Karing 全平台通用代理客户端从入门到精通：多协议订阅兼容与 Apple TV / 跨端同步教程</a>
+                </h3>
+                <p class="card-excerpt">
+                  基于 Flutter 与深度优化版 sing-box 核心开发的开源全平台网络代理客户端，通吃 Clash / V2Ray / Sing-box 等全格式订阅，支持局域网一键克隆与 WebDAV 云同步。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-03-03</span>
+                      <span>·</span>
+                      <span>15分钟</span>
+                      <span>·</span>
+                      <span>5,180 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=karing-guide" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 8: 科学上网 - 免费VPN弊端与拼好连 -->
+              <article class="card article-card" data-category="科学上网" data-tags="免费VPN, 科学上网, 隐私安全, 拼好连, 避坑指南, 教程">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-proxy">科学上网</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=free-vpn-risks">拼好连免费版实测与深度解析：永久免费翻墙梯子靠谱吗？（附三大安全风险预警与避坑指南）</a>
+                </h3>
+                <p class="card-excerpt">
+                  拼好连0元永久免费真的靠谱吗？深度剖析免费梯子背后的物理带宽成本悖论、闭源客户端隐私黑盒与晚高峰断流现实，并附带安全自保法则与主力专线选型建议。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-03-05</span>
+                      <span>·</span>
+                      <span>12分钟</span>
+                      <span>·</span>
+                      <span>5,680 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=free-vpn-risks" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- === 分类 2: 机场推荐 (6篇) - maoer.blog主推排名 1~6 === -->
+              <!-- Article 5: 排名 1 - 神行加速 -->
+              <article class="card article-card" data-category="机场推荐" data-tags="机场推荐, 神行加速, IPLC专线, 专属客户端, 晚高峰测速">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-airport">机场推荐</span>
+                  <span class="badge-rank" style="font-size:0.75rem; background:rgba(99,102,241,0.12); color:#6366f1; padding:2px 8px; border-radius:12px; font-weight:600; margin-left:auto;"><i class="fa-solid fa-trophy" style="color:#f59e0b; margin-right:4px;"></i>主推 No.1</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=shenxing">神行加速机场全面测评：19.88元起全IPLC专线、96元年付特惠与不限时大包最新资费</a>
+                </h3>
+                <p class="card-excerpt">
+                  专注于全 IPLC 国际内网专线的高端加速服务商，单节点 2.5Gbps 峰值带宽，晚高峰 4K/8K 秒开，全 1.0x 真实倍率，支持 Nextin 与 Clash 一键导入。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-11-04</span>
+                      <span>·</span>
+                      <span>11分钟</span>
+                      <span>·</span>
+                      <span>7,430 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=shenxing" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 6: 排名 2 - 大佬云 -->
+              <article class="card article-card" data-category="机场推荐" data-tags="机场推荐, 大佬云, IEPL专线, 不限时套餐, SLA保障">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-airport">机场推荐</span>
+                  <span class="badge-rank" style="font-size:0.75rem; background:rgba(99,102,241,0.12); color:#6366f1; padding:2px 8px; border-radius:12px; font-weight:600; margin-left:auto;"><i class="fa-solid fa-medal" style="color:#94a3b8; margin-right:4px;"></i>主推 No.2</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=dalao">大佬云机场深度评测：15元起限时特惠、全IPLC专线与终身不限时包最新资费方案</a>
+                </h3>
+                <p class="card-excerpt">
+                  承诺 99.9% 高可用 SLA，多入口 BGP 隧道与 IEPL/IPLC 专线架构，晚高峰单节点 2.5Gbps，起步 15 元/月，提供真正永不清零的终身不限时套餐。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-11-04</span>
+                      <span>·</span>
+                      <span>10分钟</span>
+                      <span>·</span>
+                      <span>6,920 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=dalao" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 7: 排名 3 - 榴莲云 -->
+              <article class="card article-card" data-category="机场推荐" data-tags="机场推荐, 榴莲云, IPLC专线, 不限设备, 真实倍率">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-airport">机场推荐</span>
+                  <span class="badge-rank" style="font-size:0.75rem; background:rgba(99,102,241,0.12); color:#6366f1; padding:2px 8px; border-radius:12px; font-weight:600; margin-left:auto;"><i class="fa-solid fa-award" style="color:#b45309; margin-right:4px;"></i>主推 No.3</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=liulian">榴莲云机场套餐与使用指南：15元起榴莲皮、金枕年付96元、猫山王与大黑刺最新资费表</a>
+                </h3>
+                <p class="card-excerpt">
+                  趣味榴莲命名体系与全 IPLC 内网专线，全节点 1.0x 真实倍率，晚高峰不降速，且不限制同时在线客户端数量，家庭与多设备出海首选。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-11-04</span>
+                      <span>·</span>
+                      <span>9分钟</span>
+                      <span>·</span>
+                      <span>6,150 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=liulian" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 8: 排名 4 - 云界线 -->
+              <article class="card article-card" data-category="机场推荐" data-tags="机场推荐, 云界线, 高性价比, IPLC专线, 双ISP">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-airport">机场推荐</span>
+                  <span class="badge-rank" style="font-size:0.75rem; background:rgba(99,102,241,0.12); color:#6366f1; padding:2px 8px; border-radius:12px; font-weight:600; margin-left:auto;">主推 No.4</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=yunjiexian">云界线机场深度测评：19.88元起轻云、券后13.92元、全IPLC专线与最新资费表</a>
+                </h3>
+                <p class="card-excerpt">
+                  打破专线价格壁垒，券后月付仅 13.92 元即可享受 130GB 纯正 IPLC 内网专线流量，原生双 ISP 住宅出口，晚高峰 4K/8K 丝滑不卡顿。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-11-04</span>
+                      <span>·</span>
+                      <span>9分钟</span>
+                      <span>·</span>
+                      <span>5,880 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=yunjiexian" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 9: 排名 5 - 闪电鼠 -->
+              <article class="card article-card" data-category="机场推荐" data-tags="机场推荐, 闪电鼠, 原生双ISP, 防封锁, 专线直连">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-airport">机场推荐</span>
+                  <span class="badge-rank" style="font-size:0.75rem; background:rgba(99,102,241,0.12); color:#6366f1; padding:2px 8px; border-radius:12px; font-weight:600; margin-left:auto;">主推 No.5</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=shandianshu">闪电鼠机场深度评测：15元起限时特惠、全IPLC专线直连与原生双ISP终身包最新方案</a>
+                </h3>
+                <p class="card-excerpt">
+                  主打原生双 ISP 纯净住宅出口与全线 IPLC 专线直连，从根本上解决 OpenAI / Claude 频繁弹验证码与跨境风控封号难题，提供 15 元起月付与终身包。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-11-04</span>
+                      <span>·</span>
+                      <span>10分钟</span>
+                      <span>·</span>
+                      <span>5,620 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=shandianshu" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 10: 排名 6 - 环球梯 -->
+              <article class="card article-card" data-category="机场推荐" data-tags="机场推荐, 环球梯, 8档资费, 设备限制, 避坑指南">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-airport">机场推荐</span>
+                  <span class="badge-rank" style="font-size:0.75rem; background:rgba(99,102,241,0.12); color:#6366f1; padding:2px 8px; border-radius:12px; font-weight:600; margin-left:auto;">主推 No.6</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=huanqiuti">环球梯机场深度评测：15元起微享、全套8档周期资费、4款按量包与设备数避坑指南</a>
+                </h3>
+                <p class="card-excerpt">
+                  精细化运营代表，提供 8 档周期订阅与 4 款按量包，满足从轻量尝鲜到 1.2TB 极客大包需求，深度解析各档位设备连接数限制与避坑要点。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-11-04</span>
+                      <span>·</span>
+                      <span>10分钟</span>
+                      <span>·</span>
+                      <span>5,310 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=huanqiuti" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- === 分类 3: 流媒体 (3篇) === -->
+              <!-- Article 8 -->
+              <article class="card article-card" data-category="流媒体" data-tags="流媒体, Netflix, Disney+, 住宅IP, 解锁">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-media">流媒体</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=streaming-unlock">流媒体 Netflix 与 Disney+ 解锁原理及双栈网络优化实测</a>
+                </h3>
+                <p class="card-excerpt">
+                  深入探讨各大流媒体平台对机房 IP 的封锁判定逻辑，DNS 解锁与 SNI Proxy 劫持原理，教你如何利用住宅 IP 代理稳定解锁全区片库。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-01-28</span>
+                      <span>·</span>
+                      <span>12分钟</span>
+                      <span>·</span>
+                      <span>4,210 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=streaming-unlock" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 9 -->
+              <article class="card article-card" data-category="流媒体" data-tags="流媒体, YouTube, 家庭组, 跨区合租, 会员">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-media">流媒体</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=youtube-family">2026 YouTube Premium 低价家庭组与个人合租避坑指南</a>
+                </h3>
+                <p class="card-excerpt">
+                  盘点目前依然可用的低价区订阅方案与合租发车注意事项，规避锁区、家庭组成员同住地址验证失败等常见翻车问题。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-01-18</span>
+                      <span>·</span>
+                      <span>9分钟</span>
+                      <span>·</span>
+                      <span>3,890 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=youtube-family" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 10 -->
+              <article class="card article-card" data-category="流媒体" data-tags="流媒体, Spotify, HBO Max, 跨区注册, 住宅IP">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-media">流媒体</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=spotify-hbo">Spotify 与 HBO Max 全区跨区注册与原生住宅 IP 节点搭配经验</a>
+                </h3>
+                <p class="card-excerpt">
+                  针对海外流媒体支付风控严格、注册锁 IP 的现象，梳理节点欺诈值检测（Scamalytics）与住宅 IP 纯净度要求，一次过审搞定。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-01-02</span>
+                      <span>·</span>
+                      <span>10分钟</span>
+                      <span>·</span>
+                      <span>2,750 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=spotify-hbo" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- === 分类 4: AI使用 (4篇) === -->
+              <!-- Article 11 (最新发布): DeepSeek Harness -->
+              <article class="card article-card" data-category="AI使用" data-tags="AI使用, DeepSeek, DeepSeekHarness, dsh, Agent运行时, Cordis, 自动化编程">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-ai">AI使用</span>
+                  <span class="badge-new" style="font-size:0.75rem; background:rgba(16,185,129,0.12); color:#10b981; padding:2px 8px; border-radius:12px; font-weight:600; margin-left:auto;"><i class="fa-solid fa-bolt" style="margin-right:4px;"></i>最新深度</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=deepseek-harness">DeepSeek Harness (dsh) 开源 Agent 运行时深度剖析：从 Cordis 插件架构到全自动编程实战</a>
+                </h3>
+                <p class="card-excerpt">
+                  深入拆解 DeepSeek 官方开源的 Agent 编排框架 dsh。基于 Cordis“万物皆插件”微内核架构，解析分层补丁系统、模型无感适配、Headless 无头任务执行到本地 Web 编程 Agent 落地全流程。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-11-05</span>
+                      <span>·</span>
+                      <span>16分钟</span>
+                      <span>·</span>
+                      <span>4,850 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=deepseek-harness" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 11 -->
+              <article class="card article-card" data-category="AI使用" data-tags="AI使用, DeepSeek, 提示词, 本地部署, AI">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-ai">AI使用</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=deepseek-tutorial">DeepSeek V3 / R1 满血版高效提问与本地客户端部署技巧</a>
+                </h3>
+                <p class="card-excerpt">
+                  实测 DeepSeek 满血推理能力，分享代码重构、长文深度总结的高效 Prompt 模板，并介绍配合 Chatbox / Cherry Studio 的 API 接入方案。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-02-12</span>
+                      <span>·</span>
+                      <span>16分钟</span>
+                      <span>·</span>
+                      <span>7,140 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=deepseek-tutorial" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 12 -->
+              <article class="card article-card" data-category="AI使用" data-tags="AI使用, ChatGPT, 生产力, 自动化, AI">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-ai">AI使用</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=ai-workflow">用 AI 重新定义你的工作流：5个落地实践方案</a>
+                </h3>
+                <p class="card-excerpt">
+                  告别浅尝辄止的聊天对话框。本文分享将 LLM 深入融入写作润色、代码重构、行业研报速览与自动化工作流的 5 种高阶应用方法论。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-01-20</span>
+                      <span>·</span>
+                      <span>15分钟</span>
+                      <span>·</span>
+                      <span>4,520 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=ai-workflow" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 13 -->
+              <article class="card article-card" data-category="AI使用" data-tags="AI使用, ChatGPT, Claude, 防封指南, 虚拟卡, AI">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-ai">AI使用</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=chatgpt-claude-account">ChatGPT 与 Claude 海外账号防封指南与 API 绑卡实操心得</a>
+                </h3>
+                <p class="card-excerpt">
+                  梳理 OpenAI 与 Anthropic 严苛的风控封号机制，从原生干净 IP 节点筛选、无痕浏览器指纹、到虚拟信用卡充值绑卡的一揽子安全方案。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-01-12</span>
+                      <span>·</span>
+                      <span>13分钟</span>
+                      <span>·</span>
+                      <span>6,320 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=chatgpt-claude-account" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- === 分类 5: 实用工具 (3篇) === -->
+              <!-- Article 14 -->
+              <article class="card article-card" data-category="实用工具" data-tags="实用工具, Chrome插件, 沉浸式翻译, 扩展, 浏览器">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-tools">实用工具</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=chrome-extensions">2026 年最值得安装的 10 个 Chrome 扩展插件（沉浸式翻译与效率神器）</a>
+                </h3>
+                <p class="card-excerpt">
+                  从拦截广告的 uBlock Origin 到沉浸式网页双语翻译，再到开发者必备的 JSON 查看与油猴脚本，全面武装你的浏览器环境。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2026-01-05</span>
+                      <span>·</span>
+                      <span>10分钟</span>
+                      <span>·</span>
+                      <span>5,120 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=chrome-extensions" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 15 -->
+              <article class="card article-card" data-category="实用工具" data-tags="实用工具, macOS, Raycast, 效率工具, 菜单栏">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-tools">实用工具</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=macos-raycast">macOS 必装的 20 个菜单栏工具与 Raycast 神兵利器</a>
+                </h3>
+                <p class="card-excerpt">
+                  梳理个人日常高频使用的轻量神兵利器，包含剪贴板历史、快捷启动器、系统状态监视与窗口管理，让桌面效率翻倍。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2024-01-10</span>
+                      <span>·</span>
+                      <span>12分钟</span>
+                      <span>·</span>
+                      <span>3,120 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=macos-raycast" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+
+              <!-- Article 16 -->
+              <article class="card article-card" data-category="实用工具" data-tags="实用工具, Windows, 终端, 优化调教, WSL2">
+                <div class="article-card-header">
+                  <span class="tag-pill tag-tools">实用工具</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="article.html?id=windows-optimize">Windows 11 深度优化指南：打造清爽极客工作站</a>
+                </h3>
+                <p class="card-excerpt">
+                  清理流氓预装软件、关掉遥测监控、去除右键多层折叠菜单、配合 WSL2 与 Terminal 打造现代化清爽舒适的 Windows 极客开发工作站。
+                </p>
+                <div class="article-card-footer">
+                  <div class="author-info">
+                    <div class="author-avatar-sm"><img src="images/deepseek-logo-white.svg" alt="DeepSeek"></div>
+                    <div class="card-meta">
+                      <span>2023-12-15</span>
+                      <span>·</span>
+                      <span>20分钟</span>
+                      <span>·</span>
+                      <span>5,110 次阅读</span>
+                    </div>
+                  </div>
+                  <a href="article.html?id=windows-optimize" class="btn-link">阅读更多 →</a>
+                </div>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <!-- Right Floating Sidebar -->
+        <aside class="sidebar-right">
+          <!-- Hot Articles Widget -->
+          <div class="widget">
+            <h4 class="widget-title">
+              <i class="fa-solid fa-fire"></i>
+              热门文章
+            </h4>
+            <div class="hot-list">
+              <div class="hot-item">
+                <span class="hot-rank">01</span>
+                <div class="hot-content">
+                  <a href="article.html?id=clash-verge" class="hot-title">2026 最新 Clash Verge Rev 详细配置与规则分流新手教程</a>
+                </div>
+              </div>
+              <div class="hot-item">
+                <span class="hot-rank">02</span>
+                <div class="hot-content">
+                  <a href="article.html?id=shenxing" class="hot-title">神行加速全面测评：19.88元起全IPLC专线(No.1)</a>
+                </div>
+              </div>
+              <div class="hot-item">
+                <span class="hot-rank">03</span>
+                <div class="hot-content">
+                  <a href="article.html?id=streaming-unlock" class="hot-title">流媒体 Netflix 与 Disney+ 解锁原理及双栈网络优化实测</a>
+                </div>
+              </div>
+              <div class="hot-item">
+                <span class="hot-rank">04</span>
+                <div class="hot-content">
+                  <a href="article.html?id=deepseek-tutorial" class="hot-title">DeepSeek V3 / R1 满血版高效提问与本地部署技巧</a>
+                </div>
+              </div>
+              <div class="hot-item">
+                <span class="hot-rank">05</span>
+                <div class="hot-content">
+                  <a href="article.html?id=chrome-extensions" class="hot-title">2026 年最值得安装的 10 个 Chrome 扩展插件</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tags Cloud Widget -->
+          <div class="widget" id="tags">
+            <h4 class="widget-title">
+              <i class="fa-solid fa-tags"></i>
+              热门标签
+            </h4>
+            <div class="tag-cloud">
+              <a href="tags.html?tag=Clash" class="tag-cloud-item">Clash</a>
+              <a href="tags.html?tag=Sing-box" class="tag-cloud-item">Sing-box</a>
+              <a href="tags.html?tag=Shadowrocket" class="tag-cloud-item">Shadowrocket</a>
+              <a href="tags.html?tag=机场推荐" class="tag-cloud-item">机场推荐</a>
+              <a href="tags.html?tag=IPLC" class="tag-cloud-item">IPLC专线</a>
+              <a href="tags.html?tag=Netflix" class="tag-cloud-item">Netflix</a>
+              <a href="tags.html?tag=YouTube" class="tag-cloud-item">YouTube</a>
+              <a href="tags.html?tag=DeepSeek" class="tag-cloud-item">DeepSeek</a>
+              <a href="tags.html?tag=ChatGPT" class="tag-cloud-item">ChatGPT</a>
+              <a href="tags.html?tag=Chrome插件" class="tag-cloud-item">Chrome插件</a>
+              <a href="tags.html?tag=macOS" class="tag-cloud-item">macOS</a>
+              <a href="tags.html?tag=Windows" class="tag-cloud-item">Windows</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <!-- Back to Top Button (右下角一键置顶) -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="回到顶部" title="回到顶部">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>安全跳转中... - 大肥鱼博客 (dafeiyu.blog)</title>
+  <link rel="icon" type="image/svg+xml" href="images/deepseek-logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .redirect-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+    .redirect-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent-gradient);
+    }
+    .spinner-wrap {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .spinner {
+      width: 100%;
+      height: 100%;
+      border: 3px solid var(--border-color);
+      border-top-color: var(--accent-primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    .spinner-icon {
+      position: absolute;
+      font-size: 20px;
+      color: var(--accent-primary);
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .redirect-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .redirect-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .badge-code {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--accent-primary-light);
+      border: 1px dashed var(--accent-primary);
+      border-radius: var(--radius-sm);
+      color: var(--accent-primary);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .btn-manual-jump {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 20px;
+      background: var(--accent-primary);
+      color: #ffffff;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+    }
+    .btn-manual-jump:hover {
+      background: var(--accent-primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
+    }
+    .security-notice {
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="redirect-card">
+    <div class="spinner-wrap">
+      <div class="spinner"></div>
+      <i class="fa-solid fa-paper-plane spinner-icon"></i>
+    </div>
+    <h1 class="redirect-title" id="redirectTitle">正在安全跳转中...</h1>
+    <p class="redirect-desc" id="redirectDesc">
+      正在为您通过大肥鱼博客专属安全通道前往目标官网，请稍候...
+    </p>
+    <div class="badge-code" id="affCodeWrap" style="display: none;">
+      <i class="fa-solid fa-tag"></i> 专属官方邀请码已附带：<strong id="affCodeText"></strong>
+    </div>
+    <a href="javascript:void(0)" id="manualJumpBtn" class="btn-manual-jump">
+      <span>立即前往官网</span>
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+    <div class="security-notice">
+      <i class="fa-solid fa-shield-halved" style="color: #10b981;"></i>
+      <span>dafeiyu.blog 官方正品验证与安全跳转通道</span>
+    </div>
+  </div>
+
+  <script>
+    // 官方 AFF  跳转映射表
+    const AFF_MAP = {
+      'shenxing': {
+        name: '神行加速',
+        url: 'https://wuhan01.shenxingaff.com/#/?code=WUQMrgI8',
+        code: 'WUQMrgI8'
+      },
+      'dalao': {
+        name: '大佬云',
+        url: 'https://fugui0077.dalaoyunaff.com/#/?code=Wpfk4XD5',
+        code: 'Wpfk4XD5'
+      },
+      'shandianshu': {
+        name: '闪电鼠',
+        url: 'https://fugui0077.shandianshuaff.com/#/?code=KSByEAn9',
+        code: 'KSByEAn9'
+      },
+      'liulian': {
+        name: '榴莲云',
+        url: 'https://zyrrz.liulianyunaff.com/#/?code=Y6A1M1MN',
+        code: 'Y6A1M1MN'
+      },
+      'huanqiuti': {
+        name: '环球梯',
+        url: 'https://fugui0077.huanqiutiaff.com/#/?code=rJyQn4xG',
+        code: 'rJyQn4xG'
+      },
+      'yunjiexian': {
+        name: '云界线',
+        url: 'https://fugui0077.yunjiexianaff.com/#/?code=qA3LF6hW',
+        code: 'qA3LF6hW'
+      },
+      'pinghaolian': {
+        name: '拼好连',
+        url: 'https://pinghaolian.cc/a/6urgqa32',
+        code: ''
+      }
+    };
+
+    // 获取 URL 中的目标参数
+    const params = new URLSearchParams(window.location.search);
+    const targetKey = (params.get('target') || params.get('to') || params.get('aff') || params.get('id') || '').toLowerCase().trim();
+
+    const targetInfo = AFF_MAP[targetKey];
+    const destinationUrl = targetInfo ? targetInfo.url : (params.get('url') || 'index.html');
+
+    if (targetInfo) {
+      document.title = `正在前往【${targetInfo.name}】官方网站 - 大肥鱼博客`;
+      document.getElementById('redirectTitle').textContent = `正在前往【${targetInfo.name}】官网`;
+      document.getElementById('redirectDesc').textContent = `正在通过大肥鱼 安全跳转通道为您接驳【${targetInfo.name}】官方正版站点，享受独家优惠与带宽保障。`;
+      if (targetInfo.code) {
+        document.getElementById('affCodeWrap').style.display = 'inline-flex';
+        document.getElementById('affCodeText').textContent = targetInfo.code;
+      }
+    }
+
+    const btn = document.getElementById('manualJumpBtn');
+    btn.href = destinationUrl;
+
+    // 毫秒级 自动重定向
+    setTimeout(() => {
+      window.location.replace(destinationUrl);
+    }, 400);
+  </script>
+</body>
+</html>
+

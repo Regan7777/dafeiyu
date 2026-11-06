@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" rx="28" fill="#cc785c" />
+  <!-- Anthropic Claude Starburst Spark -->
+  <g fill="#ffffff">
+    <!-- Center disk -->
+    <circle cx="64" cy="64" r="11" />
+    <!-- 8 Spokes -->
+    <path d="M64 24 C62 38 62 48 64 54 C66 48 66 38 64 24 Z" />
+    <path d="M64 104 C62 90 62 80 64 74 C66 80 66 90 64 104 Z" />
+    <path d="M24 64 C38 62 48 62 54 64 C48 66 38 66 24 64 Z" />
+    <path d="M104 64 C90 62 80 62 74 64 C80 66 90 66 104 64 Z" />
+    <path d="M35 35 C46 44 53 50 56 56 C50 53 44 46 35 35 Z" />
+    <path d="M93 93 C82 84 75 78 72 72 C78 75 84 82 93 93 Z" />
+    <path d="M93 35 C82 46 75 53 72 56 C78 50 84 44 93 35 Z" />
+    <path d="M35 93 C46 82 53 75 56 72 C50 78 44 84 35 93 Z" />
+  </g>
+</svg>
