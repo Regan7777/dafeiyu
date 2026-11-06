@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "audit": "node scripts/verify-site.js",
     "audit:launch": "node scripts/launch-audit.js",
+    "indexnow": "node scripts/submit-indexnow.js",
     "gen:llms": "node scripts/generate-llms-txt.js"
   },
   "keywords": [
