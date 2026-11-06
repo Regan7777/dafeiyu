@@ -646,6 +646,18 @@ function renderArticleDetail() {
       hljs.highlightElement(block);
     });
   }
+
+  // 9. 本地文件协议兼容适配 (file:// 下自动将 /go/{id} 映射为 go.html?target={id})
+  if (window.location.protocol === 'file:') {
+    document.querySelectorAll('a[href^="/go/"]').forEach(a => {
+      const target = a.getAttribute('href').replace(/^\/go\/?/, '').replace(/\/$/, '');
+      a.href = `go.html?target=${target}`;
+    });
+    document.querySelectorAll('a[href^="/?category="]').forEach(a => {
+      const cat = a.getAttribute('href').replace('/?category=', '');
+      a.href = `index.html?category=${cat}`;
+    });
+  }
 }
 
 /**
