@@ -56,19 +56,22 @@
       });
     }
 
-    // Back to Top Button
+    // Back to Top Button (右下角一键置顶)
     const backBtn = document.getElementById('backToTopBtn');
     if (backBtn) {
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          backBtn.classList.add('visible');
+      function checkBackToTop() {
+        const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+        if (scrollY > 240) {
+          backBtn.classList.add('show', 'visible');
         } else {
-          backBtn.classList.remove('visible');
+          backBtn.classList.remove('show', 'visible');
         }
-      });
+      }
+      window.addEventListener('scroll', checkBackToTop, { passive: true });
       backBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+      checkBackToTop();
     }
 
     // Search input redirect to home with search query

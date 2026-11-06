@@ -2091,10 +2091,12 @@ button, input {
   outline: none;
 }
 
-.back-to-top-btn.show {
+.back-to-top-btn.show,
+.back-to-top-btn.visible {
   opacity: 1;
   visibility: visible;
   transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
 .back-to-top-btn:hover {
