@@ -800,34 +800,6 @@ button, input {
   display: inline-block;
 }
 
-/* Sidebar Footer & Socials */
-.sidebar-footer {
-  padding-top: 14px;
-  border-top: 1px solid var(--border-color);
-  margin-top: 10px;
-}
-
-.social-links {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 4px 8px;
-}
-
-.social-link {
-  color: var(--text-muted);
-  font-size: 17px;
-  padding: 6px;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
-}
-
-.social-link:hover {
-  color: var(--accent-primary);
-  transform: translateY(-2px);
-  background: var(--accent-primary-light);
-}
-
 /* ==========================================================================
    Main Content Layout
    ========================================================================== */
@@ -924,40 +896,10 @@ button, input {
   border-color: #fbcfe8;
 }
 
-.tag-tech {
-  background: #eef2ff;
-  color: #4f46e5;
-  border-color: #c7d2fe;
-}
-
-.tag-efficiency {
-  background: #ecfdf5;
-  color: #059669;
-  border-color: #a7f3d0;
-}
-
 .tag-tools {
   background: #fffbeb;
   color: #d97706;
   border-color: #fde68a;
-}
-
-.tag-tutorial {
-  background: #eff6ff;
-  color: #2563eb;
-  border-color: #bfdbfe;
-}
-
-.tag-resource {
-  background: #fdf2f8;
-  color: #db2777;
-  border-color: #fbcfe8;
-}
-
-.tag-macos {
-  background: #faf5ff;
-  color: #9333ea;
-  border-color: #e9d5ff;
 }
 
 .tag-ai {
@@ -985,40 +927,10 @@ button, input {
   border-color: rgba(236, 72, 153, 0.25);
 }
 
-[data-theme="dark"] .tag-tech {
-  background: rgba(99, 102, 241, 0.15);
-  color: #818cf8;
-  border-color: rgba(99, 102, 241, 0.25);
-}
-
-[data-theme="dark"] .tag-efficiency {
-  background: rgba(16, 185, 129, 0.15);
-  color: #10b981;
-  border-color: rgba(16, 185, 129, 0.25);
-}
-
 [data-theme="dark"] .tag-tools {
   background: rgba(245, 158, 11, 0.15);
   color: #f59e0b;
   border-color: rgba(245, 158, 11, 0.25);
-}
-
-[data-theme="dark"] .tag-tutorial {
-  background: rgba(59, 130, 246, 0.15);
-  color: #3b82f6;
-  border-color: rgba(59, 130, 246, 0.25);
-}
-
-[data-theme="dark"] .tag-resource {
-  background: rgba(236, 72, 153, 0.15);
-  color: #ec4899;
-  border-color: rgba(236, 72, 153, 0.25);
-}
-
-[data-theme="dark"] .tag-macos {
-  background: rgba(168, 85, 247, 0.15);
-  color: #c084fc;
-  border-color: rgba(168, 85, 247, 0.25);
 }
 
 [data-theme="dark"] .tag-ai {
@@ -1700,52 +1612,6 @@ button, input {
 }
 
 /* Contact Card */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin-top: 16px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
-  background: var(--bg-input);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
-}
-
-.contact-item:hover {
-  background: var(--accent-primary-light);
-  border-color: var(--accent-primary);
-  transform: translateY(-2px);
-}
-
-.contact-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  background: var(--accent-primary-light);
-  color: var(--accent-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-}
-
-.contact-info .contact-label {
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
-.contact-info .contact-value {
-  font-size: 13.5px;
-  font-weight: 500;
-  color: var(--text-primary);
-}
 
 /* ==========================================================================
    Responsive Breakpoints
