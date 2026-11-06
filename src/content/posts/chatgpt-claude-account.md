@@ -22,7 +22,7 @@ faqs:
     a: "Anthropic 的风控算法对住宅 IP 纯净度要求极高，其机房 IP 黑名单更新极为激进。若节点被检测到频繁变动地理坐标或多人共享，系统会直接触发静默封禁。必须使用原生固定住宅 IP。"
   - q: "虚拟信用卡在充值 ChatGPT Plus 时扣款被拒如何解决？"
     a: "绑定信用卡时，浏览器必须开启全无痕隐身模式，节点必须与信用卡账单地址的邮编归属州（如免税州 Oregon / Delaware）保持一致，且先在卡内充值足够余额防范预扣款失败。"
-relatedArticles: ["ai-workflow","deepseek-tutorial","dns-leak-fix","dalao"]
+relatedArticles: ["ai-workflow","deepseek-tutorial","deepseek-harness","dns-leak-fix","spotify-hbo"]
 prevId: "ai-workflow"
 nextId: "chrome-extensions"
 ---

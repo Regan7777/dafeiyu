@@ -23,7 +23,7 @@ faqs:
     a: "临时单次轻度查阅非机密资料风险相对可控，但前提是切勿在主力设备上赋予敏感权限，且绝对不要在会话中登录重要私人账号，建议仅在沙箱或临时虚拟机中操作。"
   - q: "为什么免费梯子的 IP 极易被 ChatGPT、Claude 或海外流媒体封禁？"
     a: "免费节点的公共公网 IP 长期被成千上万个用户同时挂载，且混杂大量恶意爬虫与羊毛党脚本，在各大风控数据库中信誉分极低（Fraud Score 接近 100），任何平台检测到该机房段都会直接触发连坐封号。"
-relatedArticles: ["shenxing","dalao","shandianshu","dns-leak-fix","clash-verge"]
+relatedArticles: ["shenxing","dalao","shandianshu","dns-leak-fix","clash-verge","liulian","huanqiuti","yunjiexian"]
 prevId: "karing-guide"
 nextId: "shenxing"
 ---

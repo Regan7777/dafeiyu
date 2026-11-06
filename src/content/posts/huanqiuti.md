@@ -23,7 +23,7 @@ faqs:
     a: "各周期套餐均明确标注了允许的同时在线连接数（通常为 3~5 台）。家庭内多设备建议在软路由或单一主机上开启局域网共享代理，仅占用 1 个连接数即可供全家使用。"
   - q: "环球梯节点支持观看哪些海外流媒体？"
     a: "主流节点均支持 YouTube Premium 4K 秒开、Netflix 非自制剧解锁、Disney+ 及 Spotify 跨区听歌，网络出口纯净度较高。"
-relatedArticles: ["clash-verge","sing-box-guide","nextin-guide","streaming-unlock","dalao"]
+relatedArticles: ["clash-verge","sing-box-guide","nextin-guide","streaming-unlock","dalao","liulian","yunjiexian","shandianshu"]
 prevId: "shandianshu"
 nextId: "streaming-unlock"
 ---

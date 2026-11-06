@@ -23,7 +23,7 @@ faqs:
     a: "实测香港、台湾、日本、新加坡及美国节点均具备主流流媒体原生解锁能力，支持观看 Netflix 非自制剧集及 Disney+ 4K 杜比视界，晚高峰拖拽进度条缓冲在 1 秒以内。"
   - q: "支持哪些客户端一键接入？"
     a: "全面兼容 Clash Verge Rev、Sing-box、Shadowrocket、Nextin 及 Karing 等主流全平台客户端，用户中心提供一键导入和通用订阅链接复制功能。"
-relatedArticles: ["clash-verge","sing-box-guide","karing-guide","streaming-unlock","yunjiexian"]
+relatedArticles: ["clash-verge","sing-box-guide","karing-guide","streaming-unlock","yunjiexian","dalao","huanqiuti","shandianshu"]
 prevId: "dalao"
 nextId: "yunjiexian"
 ---

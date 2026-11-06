@@ -22,7 +22,7 @@ faqs:
     a: "uBlock Origin Lite 等新型扩展通过 Declarative Net Request 机制适配了 V3 规范，依然能够高效过滤 95% 以上的常见横幅与弹窗广告，日常浏览几乎无感。"
   - q: "沉浸式翻译插件选择哪个翻译服务引擎质量最好、性价比最高？"
     a: "翻译英文技术文档首选 DeepL API 或 OpenAI / DeepSeek 翻译接口，语句通顺度远超传统逐字硬翻；若追求免费可用，可直接选用内置的微软或 Google 官方翻译通道。"
-relatedArticles: ["macos-raycast","windows-optimize","ai-workflow","clash-verge"]
+relatedArticles: ["macos-raycast","windows-optimize","ai-workflow","clash-verge","deepseek-harness"]
 prevId: "chatgpt-claude-account"
 nextId: "macos-raycast"
 ---

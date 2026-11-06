@@ -22,7 +22,7 @@ faqs:
     a: "直接将 Raycast 的全局热键绑定为 Command + Space（并关闭系统自带 Spotlight 的热键冲突），将原本常用的计算器、剪贴板唤起键绑定为单键或双击热键，1~2 天即可完全肌肉记忆。"
   - q: "推荐哪些必备的高生产力 Raycast 官方与社区扩展插件？"
     a: "必备推荐：Brew（包管理即时搜索）、Color Picker（屏幕吸色器）、GitHub（查看 PR 与通知）、Kill Process（秒杀僵死进程）、Speedtest（桌面一键测网速）。"
-relatedArticles: ["chrome-extensions","windows-optimize","ai-workflow","shadowrocket-ios"]
+relatedArticles: ["chrome-extensions","windows-optimize","ai-workflow","shadowrocket-ios","deepseek-tutorial"]
 prevId: "chrome-extensions"
 nextId: "windows-optimize"
 ---

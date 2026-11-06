@@ -22,7 +22,7 @@ faqs:
     a: "在 Apple TV 的 App Store 登录同一外区账号下载 Nextin 后，可通过局域网扫码或一键 iCloud 同步将手机上的节点配置秒级镜像至电视端，实现客厅大屏 4K 追剧无缝分流。"
   - q: "导入机场订阅后节点列表显示为空或者测速全部超时？"
     a: "请检查订阅链接是否开启了节点格式转换。Nextin 对标准 Clash / Sing-box 格式兼容良好，如果出现空白，建议在机场后台重新复制“通用订阅”或“小火箭订阅”再次导入。"
-relatedArticles: ["shadowrocket-ios","karing-guide","clash-verge","dns-leak-fix"]
+relatedArticles: ["shadowrocket-ios","karing-guide","clash-verge","dns-leak-fix","clash-mi"]
 prevId: "clash-mi"
 nextId: "karing-guide"
 ---

@@ -23,7 +23,7 @@ faqs:
     a: "日常使用必须选择「配置」（Config）模式，流量会自动根据分流规则智能处理（国内直连、海外代理）；若选「代理」（Proxy）则所有流量包括微信、网银都会绕道海外导致延迟飙升；「直连」（Direct）则完全不经过代理。"
   - q: "节点测速显示大量“超时”，但连接后依然能正常访问外网？"
     a: "小火箭默认测速是发起一次到 Google 或 Cloudflare 的真实 HTTP 探测。若目标测试地址被临时阻断会显示超时，但不代表节点失效。可以长按节点单独测试 ICMP Ping，或直接在浏览器打开海外页面验证。"
-relatedArticles: ["clash-verge","sing-box-guide","nextin-guide","dns-leak-fix"]
+relatedArticles: ["clash-verge","sing-box-guide","nextin-guide","dns-leak-fix","clash-mi","youtube-family"]
 prevId: "sing-box-guide"
 nextId: "dns-leak-fix"
 ---

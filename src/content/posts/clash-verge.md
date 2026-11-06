@@ -23,7 +23,7 @@ faqs:
     a: "TUN 模式通过在系统底层创建虚拟网卡接管所有网络流量（包括不支持系统代理的终端命令行、海外游戏与后台服务）。日常轻度网页浏览建议开启系统代理即可；若需要进行终端 Git 操作、海外游戏加速或使用不支持代理的桌面客户端，强烈建议开启 TUN 模式。"
   - q: "为什么订阅节点更新频繁报错 fetch failed 或 SSL 握手超时？"
     a: "多由于订阅转换后端被本地网络运营商干扰阻断。建议在订阅详情中开启「跳过证书验证」，或在节点列表中先选择一个可用节点开启代理后再进行订阅更新；亦可在设置中更换备用订阅转换节点。"
-relatedArticles: ["sing-box-guide","dns-leak-fix","clash-mi","karing-guide"]
+relatedArticles: ["sing-box-guide","dns-leak-fix","clash-mi","karing-guide","spotify-hbo"]
 prevId: "windows-optimize"
 nextId: "sing-box-guide"
 ---

@@ -22,7 +22,7 @@ faqs:
     a: "原生支持标准 Clash YAML 订阅、Mihomo Meta 格式以及 Base64 编码的通用链接。支持自定义定时更新间隔与批量节点真连接延迟测速。"
   - q: "为什么在 macOS 或 iOS 上首次连接时提示需要安装系统描述文件？"
     a: "苹果系统安全策略要求任何接管网络流量的虚拟网卡驱动都必须经过用户显式授权。按照系统弹窗指引在「设置」中允许并信任 Network Extension 即可，无安全隐患。"
-relatedArticles: ["clash-verge","karing-guide","nextin-guide","dns-leak-fix"]
+relatedArticles: ["clash-verge","karing-guide","nextin-guide","dns-leak-fix","youtube-family"]
 prevId: "dns-leak-fix"
 nextId: "nextin-guide"
 ---

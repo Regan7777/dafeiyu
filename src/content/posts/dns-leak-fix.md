@@ -23,7 +23,7 @@ faqs:
     a: "Windows 下的 nslookup 工具默认绕过系统 Winsock API，直接向网卡首选 DNS 发送原始 UDP 53 数据包。真正检测是否泄露应在浏览器中打开 browserleaks.com/dns 测试，只要没有出现国内运营商 DNS 服务器即属安全。"
   - q: "Fake-IP 模式与 Redir-Host 模式有什么区别，解决泄露选哪个更好？"
     a: "Fake-IP 模式会在本地直接返回一个虚拟保留 IP（如 198.18.0.x），将真实的 DNS 解析过程完整推迟到远端代理节点进行，从根源上杜绝了本地解析导致的 DNS 污染与泄露，是目前最推荐的解决方式。"
-relatedArticles: ["clash-verge","sing-box-guide","shadowrocket-ios","windows-optimize"]
+relatedArticles: ["clash-verge","sing-box-guide","shadowrocket-ios","windows-optimize","spotify-hbo"]
 prevId: "shadowrocket-ios"
 nextId: "clash-mi"
 ---

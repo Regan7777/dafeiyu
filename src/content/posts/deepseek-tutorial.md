@@ -22,7 +22,7 @@ faqs:
     a: "满血版拥有超强的逻辑反思与长链推理能力，在复杂系统架构、算法设计及深层 Bug 排查中几乎不会出现逻辑短视；而蒸馏版虽然响应速度极快，但在多步复杂依赖问题上更容易产生推理漂移。"
   - q: "本地客户端选择 Chatbox、Cherry Studio 还是 NextChat 体验最好？"
     a: "追求代码美观与知识库推荐 Cherry Studio；追求极简多端与同步推荐 Chatbox；轻量 Web 部署推荐 NextChat。三者均完整支持 DeepSeek 的思考过程（Thinking Process）折叠渲染。"
-relatedArticles: ["deepseek-harness","ai-workflow","chatgpt-claude-account","clash-verge"]
+relatedArticles: ["deepseek-harness","ai-workflow","chatgpt-claude-account","clash-verge","macos-raycast"]
 prevId: "deepseek-harness"
 nextId: "ai-workflow"
 ---

@@ -23,7 +23,7 @@ faqs:
     a: "支持。神行加速的不限时大包适合出海频率较低但要求随时有网的轻度用户，支持多台设备通过标准 Clash / Sing-box 订阅共享流量池，长期有效不限到期日。"
   - q: "遇到节点偶尔打不开 OpenAI 或 Claude 官网时如何切换？"
     a: "可优先选择带有「原生解锁」或「住宅出口」标识的专线节点（如香港 01、新加坡 02、美国 03），并在客户端中刷新 DNS 缓存即可流畅过审。"
-relatedArticles: ["clash-verge","sing-box-guide","shadowrocket-ios","streaming-unlock","free-vpn-risks"]
+relatedArticles: ["clash-verge","sing-box-guide","shadowrocket-ios","streaming-unlock","free-vpn-risks","shandianshu","dns-leak-fix"]
 prevId: "free-vpn-risks"
 nextId: "dalao"
 ---

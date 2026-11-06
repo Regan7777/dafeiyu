@@ -23,7 +23,7 @@ faqs:
     a: "传统规则需要将数万条域名和 IP 硬编码在本地配置中，导致启动极慢、内存暴涨。Rule-set 将规则预编译为二进制 SRS 格式，客户端可按需异步拉取并毫秒级匹配，兼顾了秒级启动与极低内存开销。"
   - q: "为什么开启 Sing-box TUN 模式后，部分国内应用加载卡顿？"
     a: "属于分流规则顺序或 DNS 配置不当导致。需确保规则集中 geosite-geolocation-cn 与 geoip-cn 置于前置并设置为 direct（直连），同时检查本地路由的默认 DNS 是否与系统上游发生冲突。"
-relatedArticles: ["clash-verge","karing-guide","dns-leak-fix","shadowrocket-ios"]
+relatedArticles: ["clash-verge","karing-guide","dns-leak-fix","clash-mi","shadowrocket-ios"]
 prevId: "clash-verge"
 nextId: "shadowrocket-ios"
 ---

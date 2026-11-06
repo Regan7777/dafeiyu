@@ -23,7 +23,7 @@ faqs:
     a: "闪电鼠提供的终身不限时包流量用完即止，不设过期截止日，非常适合作为主力网络之外的长期防封、防失联应急备用池。"
   - q: "配置到 Windows 端需要注意哪些网络设置？"
     a: "建议开启 Clash Verge Rev 的 TUN 模式，并检查系统 DNS 设置是否启用 Fake-IP 模式，避免本地 DNS 污染导致住宅节点优势被抵消。"
-relatedArticles: ["clash-verge","shadowrocket-ios","karing-guide","streaming-unlock","free-vpn-risks"]
+relatedArticles: ["clash-verge","shadowrocket-ios","karing-guide","streaming-unlock","free-vpn-risks","shenxing","liulian","huanqiuti"]
 prevId: "yunjiexian"
 nextId: "huanqiuti"
 ---

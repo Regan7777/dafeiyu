@@ -79,18 +79,20 @@ files.forEach(f => {
 
 // Check results
 const orphanPosts = Object.keys(incomingLinks).filter(s => incomingLinks[s].length === 0);
+const lowIncomingPosts = Object.keys(incomingLinks).filter(s => incomingLinks[s].length < 3);
 const lowFaqPosts = Object.keys(faqsCount).filter(s => faqsCount[s] < 3);
 const lowOutgoingPosts = Object.keys(outgoingLinks).filter(s => outgoingLinks[s].length < 3);
 
 console.log('\n--- VERIFICATION RESULTS ---');
 console.log('1. Broken Internal Links:', brokenLinks.length ? JSON.stringify(brokenLinks) : 'NONE (100% Valid Links ✅)');
 console.log('2. Orphan Posts (0 Incoming Links):', orphanPosts.length ? JSON.stringify(orphanPosts) : 'NONE (0 Orphans! 100% Interconnected ✅)');
-console.log('3. Native Emoji / Banned Symbol Violations:', emojiIssues.length ? JSON.stringify(emojiIssues) : 'NONE (0 Emojis! Pure Typography ✅)');
-console.log('4. Posts with < 3 FAQs:', lowFaqPosts.length ? JSON.stringify(lowFaqPosts) : 'NONE (All 24 Posts Have >= 3 FAQs ✅)');
-console.log('5. Posts with < 3 Outgoing Links:', lowOutgoingPosts.length ? JSON.stringify(lowOutgoingPosts) : 'NONE (All 24 Posts Have >= 3 Outgoing Links ✅)');
-console.log('6. Tutorial Neutrality Violations:', tutorialViolations.length ? JSON.stringify(tutorialViolations) : 'NONE (100% Neutral Tutorials ✅)');
+console.log('3. Weakly Linked Posts (< 3 Incoming Links):', lowIncomingPosts.length ? JSON.stringify(lowIncomingPosts) : 'NONE (All 24 Posts Have >= 3 Incoming Links ✅)');
+console.log('4. Native Emoji / Banned Symbol Violations:', emojiIssues.length ? JSON.stringify(emojiIssues) : 'NONE (0 Emojis! Pure Typography ✅)');
+console.log('5. Posts with < 3 FAQs:', lowFaqPosts.length ? JSON.stringify(lowFaqPosts) : 'NONE (All 24 Posts Have >= 3 FAQs ✅)');
+console.log('6. Posts with < 3 Outgoing Links:', lowOutgoingPosts.length ? JSON.stringify(lowOutgoingPosts) : 'NONE (All 24 Posts Have >= 3 Outgoing Links ✅)');
+console.log('7. Tutorial Neutrality Violations:', tutorialViolations.length ? JSON.stringify(tutorialViolations) : 'NONE (100% Neutral Tutorials ✅)');
 
-if (brokenLinks.length || orphanPosts.length || emojiIssues.length || lowFaqPosts.length || tutorialViolations.length) {
+if (brokenLinks.length || orphanPosts.length || lowIncomingPosts.length || emojiIssues.length || lowFaqPosts.length || lowOutgoingPosts.length || tutorialViolations.length) {
   console.error('\n❌ AUDIT FAILED! Please fix the issues above.');
   process.exit(1);
 } else {

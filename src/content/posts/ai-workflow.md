@@ -23,7 +23,7 @@ faqs:
     a: "建议将高频提示词按角色定位、输入约束、输出格式三段式结构进行标准化沉淀，并结合快捷键工具（如 Raycast Snippets 或剪贴板历史）实现一秒调用。"
   - q: "使用公共大模型处理企业敏感业务时，如何规避数据安全泄露风险？"
     a: "严禁在公共 Web 对话框中粘贴客户个人隐私数据或未脱敏的商业源码。可选用提供“零数据保留”承诺的官方商业 API 接口，或在本地运行私有化开源模型。"
-relatedArticles: ["deepseek-tutorial","deepseek-harness","chatgpt-claude-account","chrome-extensions"]
+relatedArticles: ["deepseek-tutorial","deepseek-harness","chatgpt-claude-account","chrome-extensions","macos-raycast"]
 prevId: "deepseek-tutorial"
 nextId: "chatgpt-claude-account"
 ---

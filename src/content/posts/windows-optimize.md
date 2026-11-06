@@ -22,7 +22,7 @@ faqs:
     a: "若平时常从不明第三方网站下载破解软件或运行来历不明的脚本，不建议关闭 Defender；若属于极客用户且仅安装经开源审计与官方认证的合规软件，关闭实时扫描可彻底消除磁盘 100% 占用的卡顿。"
   - q: "遇到第三方代理异常崩溃导致系统全网断网、浏览器打不开网页时如何一键救砖？"
     a: "打开管理员终端执行 netsh winsock reset 和 netsh int ip reset，随后进入 Windows「设置 -> 网络与 Internet -> 代理」，关闭所有自动检测与手动代理开关，重启电脑即可 100% 恢复。"
-relatedArticles: ["chrome-extensions","macos-raycast","dns-leak-fix","clash-verge"]
+relatedArticles: ["chrome-extensions","macos-raycast","dns-leak-fix","clash-verge","deepseek-harness","chatgpt-claude-account"]
 prevId: "macos-raycast"
 nextId: "clash-verge"
 ---

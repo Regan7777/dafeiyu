@@ -22,7 +22,7 @@ faqs:
     a: "极大概率不会导致 Google 账号被封，最坏情况仅是被系统取消 Premium 会员权益。但为保证绝对安全，建议使用注册满半年的副号参与合租，并将重要数据存放在主力账号中。"
   - q: "开通 YouTube Premium 后，在电视盒子或 Apple TV 上依然偶尔弹出广告？"
     a: "需确认电视端 App 登录的账号正是开通会员的对应身份账户；另外部分创作者在正片中自行剪辑录制的赞助商品牌广告属于视频画面本身，去广告机制无法跳过。"
-relatedArticles: ["streaming-unlock","spotify-hbo","clash-verge","dalao"]
+relatedArticles: ["streaming-unlock","spotify-hbo","clash-verge","dalao","shadowrocket-ios"]
 prevId: "streaming-unlock"
 nextId: "spotify-hbo"
 ---

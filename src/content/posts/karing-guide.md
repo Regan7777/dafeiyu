@@ -22,7 +22,7 @@ faqs:
     a: "在 Karing 设置中开启「备份与同步」，配置任意 WebDAV 账户（如坚果云或自建网盘），或在同一 Wi-Fi 下使用「局域网克隆」功能，一部手机即可一键将配置推送到所有电脑和电视。"
   - q: "Karing 为什么在部分 Android 机型上后台容易被系统杀掉？"
     a: "国产安卓系统的电池激进优化策略常在熄屏后切断后台进程。请在系统应用管理中将 Karing 的省电策略设为“无限制”，并开启“自启动”和“后台常驻应用锁”。"
-relatedArticles: ["sing-box-guide","clash-mi","clash-verge","nextin-guide"]
+relatedArticles: ["sing-box-guide","clash-mi","clash-verge","nextin-guide","youtube-family"]
 prevId: "nextin-guide"
 nextId: "free-vpn-risks"
 ---

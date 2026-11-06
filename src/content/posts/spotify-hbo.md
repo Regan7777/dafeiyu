@@ -22,7 +22,7 @@ faqs:
     a: "是的，Max 对普通机房云主机（如 AWS/Linode）封锁非常彻底，几乎全部阻断。建议搭配具有原生家庭住宅宽带（双 ISP）的专线节点，才能稳定观看 4K HDR 杜比视界。"
   - q: "跨区订阅成功后，平时听歌刷剧还需要一直挂着对应国家的节点吗？"
     a: "Spotify 免费版用户每 14 天需要挂对应国家的节点登录一次刷新身份，Premium 会员则支持全球任意网络畅听无阻；HBO Max 则必须在全播放流程中保持目标地区代理在线。"
-relatedArticles: ["streaming-unlock","youtube-family","sing-box-guide","liulian"]
+relatedArticles: ["streaming-unlock","youtube-family","sing-box-guide","liulian","chatgpt-claude-account"]
 prevId: "youtube-family"
 nextId: "deepseek-harness"
 ---

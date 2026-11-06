@@ -23,7 +23,7 @@ faqs:
     a: "周期订阅套餐（月付/季付/年付）每月重置流量，适合日常高频追剧和办公主力；终身不限时包流量永不过期，适合用量不大、仅作长期备用应急出海的用户。"
   - q: "导入订阅后为什么提示网络连接错误或无法拉取节点？"
     a: "请先登录大佬云用户中心，检查套餐流量是否充足且未处于冻结状态；若正常，可尝试更换客户端内的订阅转换节点或直接复制单节点链接导入测试。"
-relatedArticles: ["clash-verge","sing-box-guide","shadowrocket-ios","streaming-unlock","free-vpn-risks"]
+relatedArticles: ["clash-verge","sing-box-guide","shadowrocket-ios","streaming-unlock","free-vpn-risks","shenxing","shandianshu","huanqiuti"]
 prevId: "shenxing"
 nextId: "liulian"
 ---

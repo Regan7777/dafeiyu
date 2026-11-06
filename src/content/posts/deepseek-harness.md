@@ -22,7 +22,7 @@ faqs:
     a: "不需要本地显卡。dsh 属于轻量 Agent 调度运行时框架，通过调用 DeepSeek 官方云端 API（或兼容中继）完成推理计算，本地电脑只需 Node.js/Python 运行环境即可流畅运行。"
   - q: "如何在 dsh 中安全地限制 Agent 对本地操作系统文件的修改权限？"
     a: "可在配置中启用基于容器或独立工作目录隔离的白名单模式，禁止 Agent 在指定工作区之外执行危险 shell 命令，实现本地代码开发安全闭环。"
-relatedArticles: ["deepseek-tutorial","ai-workflow","windows-optimize","clash-verge"]
+relatedArticles: ["deepseek-tutorial","ai-workflow","windows-optimize","clash-verge","chatgpt-claude-account"]
 prevId: "spotify-hbo"
 nextId: "deepseek-tutorial"
 ---

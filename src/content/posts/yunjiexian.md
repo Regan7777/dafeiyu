@@ -23,7 +23,7 @@ faqs:
     a: "因为采用纯正内网 IPLC 专线传输，香港、日本节点的国内直连 Ping 值稳定在 30~45ms 之间，网络抖动（Jitter）小于 2ms，搭配支持 TUN 模式的客户端非常适合 Steam、外服游戏加速。"
   - q: "客户端分流规则推荐使用哪种模式？"
     a: "推荐使用 Rule（规则模式）或搭配开源 Mihomo 智能分流规则集，既能保证国内直连速度，又能确保海外流量精准走高速专线出口。"
-relatedArticles: ["clash-verge","sing-box-guide","shadowrocket-ios","streaming-unlock","liulian"]
+relatedArticles: ["clash-verge","sing-box-guide","shadowrocket-ios","streaming-unlock","liulian","shenxing","dalao","shandianshu"]
 prevId: "liulian"
 nextId: "shandianshu"
 ---

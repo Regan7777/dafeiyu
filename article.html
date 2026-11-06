@@ -267,6 +267,111 @@
 
               <h2 id="section-5">五、分流规则深度调教与常见报错排查</h2>
               <p>在「代理」面板中合理配置节点策略组（PROXIES 手动选点，AUTO 自动低延迟切换），国内域名走 DIRECT 直连，海外走代理，退出软件时若遇到断网，排查 Windows 代理服务器开关即可秒级修复。</p>
+
+              <!-- FAQ Section -->
+              <div class="article-faq-wrapper">
+                <h2 id="faq">
+                  <i class="fa-solid fa-circle-question" style="color: var(--accent-primary); margin-right: 8px;"></i>常见问题解答 (FAQ)
+                </h2>
+                <div class="faq-container">
+                  <div class="faq-item">
+                    <div class="faq-question">
+                      <span class="faq-q-badge">Q1：</span> Clash Verge Rev 启动后浏览器无法联网，提示连接已重置或页面白屏怎么办？
+                    </div>
+                    <div class="faq-answer">
+                      常见原因为端口冲突或系统代理未正确写入。请先在软件「设置」中检查混合端口（默认 7897）是否被其他软件占用，关闭其他代理后重启 Clash Verge Rev。若依然异常，可在「网卡设置」中重新安装或重置 TUN 虚拟网卡驱动。
+                    </div>
+                  </div>
+                  <div class="faq-item">
+                    <div class="faq-question">
+                      <span class="faq-q-badge">Q2：</span> 什么是 TUN 模式？平时日常上网需要一直开启吗？
+                    </div>
+                    <div class="faq-answer">
+                      TUN 模式通过在系统底层创建虚拟网卡接管所有网络流量（包括不支持系统代理的终端命令行、海外游戏与后台服务）。日常轻度网页浏览建议开启系统代理即可；若需要进行终端 Git 操作、海外游戏加速或使用不支持代理的桌面客户端，强烈建议开启 TUN 模式。
+                    </div>
+                  </div>
+                  <div class="faq-item">
+                    <div class="faq-question">
+                      <span class="faq-q-badge">Q3：</span> 为什么订阅节点更新频繁报错 fetch failed 或 SSL 握手超时？
+                    </div>
+                    <div class="faq-answer">
+                      多由于订阅转换后端被本地网络运营商干扰阻断。建议在订阅详情中开启「跳过证书验证」，或在节点列表中先选择一个可用节点开启代理后再进行订阅更新；亦可在设置中更换备用订阅转换节点。
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Related Articles Section -->
+              <div class="related-articles-section">
+                <h2 id="related-articles">
+                  <i class="fa-solid fa-link" style="color: var(--accent-primary); margin-right: 8px;"></i>延伸阅读与精选内链推荐
+                </h2>
+                <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 12px;">
+                  欢迎继续探索本站关联精选专栏，体系化掌握网络加速、流媒体解锁与 AI 生产力核心技术：
+                </p>
+                <div class="related-articles-grid">
+                  <a href="article.html?id=sing-box-guide" class="related-article-card">
+                    <div class="related-card-top">
+                      <span class="tag-pill-sm tag-proxy"><i class="fa-solid fa-paper-plane"></i> 科学上网</span>
+                      <span style="font-size: 12px; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> 12分钟阅读</span>
+                    </div>
+                    <div class="related-card-title">Sing-box 新一代全平台核心配置与规则集 (Rule-set) 实战进阶</div>
+                    <p class="related-card-excerpt">Sing-box 作为新一代通用网络核心，以纯 Go 编写带来极致性能与极低内存开销。其开创性的二进制规则集节省高达 80% 内存。</p>
+                    <div class="related-card-footer">
+                      <span><i class="fa-regular fa-calendar"></i> 2026-10-28</span>
+                      <span class="related-read-more">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                  </a>
+                  <a href="article.html?id=dns-leak-fix" class="related-article-card">
+                    <div class="related-card-top">
+                      <span class="tag-pill-sm tag-proxy"><i class="fa-solid fa-paper-plane"></i> 科学上网</span>
+                      <span style="font-size: 12px; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> 8分钟阅读</span>
+                    </div>
+                    <div class="related-card-title">科学上网避坑：DNS 泄露检测与 TUN 虚拟网卡失效排障手册</div>
+                    <p class="related-card-excerpt">剖析 DNS 泄露根源、Fake-IP 隔离防御机制与 TUN 虚拟网卡驱动排障方案。</p>
+                    <div class="related-card-footer">
+                      <span><i class="fa-regular fa-calendar"></i> 2026-10-18</span>
+                      <span class="related-read-more">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                  </a>
+                  <a href="article.html?id=clash-mi" class="related-article-card">
+                    <div class="related-card-top">
+                      <span class="tag-pill-sm tag-proxy"><i class="fa-solid fa-paper-plane"></i> 科学上网</span>
+                      <span style="font-size: 12px; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> 10分钟阅读</span>
+                    </div>
+                    <div class="related-card-title">2026 全平台轻量代理客户端 Clash Mi 详细安装与配置教程</div>
+                    <p class="related-card-excerpt">基于 Flutter 打造的全新跨平台轻量代理工具，原生集成 Mihomo 满血内核与现代化 Web 仪表盘。</p>
+                    <div class="related-card-footer">
+                      <span><i class="fa-regular fa-calendar"></i> 2026-10-26</span>
+                      <span class="related-read-more">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                  </a>
+                  <a href="article.html?id=karing-guide" class="related-article-card">
+                    <div class="related-card-top">
+                      <span class="tag-pill-sm tag-proxy"><i class="fa-solid fa-paper-plane"></i> 科学上网</span>
+                      <span style="font-size: 12px; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> 12分钟阅读</span>
+                    </div>
+                    <div class="related-card-title">Karing 全平台通用代理客户端从入门到精通教程</div>
+                    <p class="related-card-excerpt">无缝支持 Clash、V2Ray、Sing-box 等全格式订阅链接，支持 Apple TV 与跨端同步。</p>
+                    <div class="related-card-footer">
+                      <span><i class="fa-regular fa-calendar"></i> 2026-10-22</span>
+                      <span class="related-read-more">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                  </a>
+                  <a href="article.html?id=spotify-hbo" class="related-article-card">
+                    <div class="related-card-top">
+                      <span class="tag-pill-sm tag-media"><i class="fa-solid fa-tv"></i> 海外流媒体</span>
+                      <span style="font-size: 12px; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> 8分钟阅读</span>
+                    </div>
+                    <div class="related-card-title">Spotify 与 HBO Max 全区跨区注册与原生住宅 IP 节点搭配经验</div>
+                    <p class="related-card-excerpt">梳理节点欺诈值检测与原生住宅 IP 纯净度要求，让你一次过审搞定海外流媒体。</p>
+                    <div class="related-card-footer">
+                      <span><i class="fa-regular fa-calendar"></i> 2026-10-05</span>
+                      <span class="related-read-more">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
