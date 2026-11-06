@@ -3,7 +3,7 @@ title: "2026 年最值得安装的 10 个 Chrome 扩展插件（沉浸式翻译�
 category: "实用工具"
 categoryClass: "tag-tools"
 categoryIcon: "fa-solid fa-screwdriver-wrench"
-date: "2026-01-05"
+date: "2026-09-28"
 readingTime: "10分钟阅读"
 views: "5,120 次阅读"
 lead: "现代浏览器早已不再仅仅是一个简单的网页渲染窗口，而是我们每天面对时间最长的核心操作系统。通过扩展生态系统（Chrome Extensions），我们可以赋予浏览器无限的可能。本文精选出 10 款兼具设计美感与硬核生产力的神器。"

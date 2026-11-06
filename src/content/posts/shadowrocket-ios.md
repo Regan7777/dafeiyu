@@ -3,7 +3,7 @@ title: "Shadowrocket (小火箭) iOS 新手配置、节点订阅与模块规则�
 category: "科学上网"
 categoryClass: "tag-proxy"
 categoryIcon: "fa-solid fa-paper-plane"
-date: "2026-02-12"
+date: "2026-10-20"
 readingTime: "10分钟阅读"
 views: "7,350 次阅读"
 lead: "Shadowrocket（小火箭）作为 iOS 平台保有量最高的高性能网络工具，以其对几乎全协议的原生支持与出色的后台保活调度深受青睐。本文手把手梳理正版购买、订阅导入、配置模式分流、去广告模块安装以及后台省电防断连优化技巧。"

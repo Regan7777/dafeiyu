@@ -3,7 +3,7 @@ title: "DeepSeek Harness (dsh) 开源 Agent 运行时深度剖析：从 Cordis �
 category: "AI工具与实战"
 categoryClass: "tag-ai"
 categoryIcon: "fa-solid fa-robot"
-date: "2026-11-05"
+date: "2026-11-06"
 readingTime: "16分钟阅读"
 views: "4,850 次阅读"
 lead: "DeepSeek 官方开源的 Agent 运行时与编排框架 DeepSeek Harness（简称 dsh）引起了全球开发者社区的极大轰动。不同于传统沉重固化的 Agent 巨石框架，dsh 基于先进的 Cordis 微内核架构，彻底践行“万物皆插件（Everything is a Plugin）”理念，将 Agent 运行循环、模型适配器、工具注册表、沙箱终端与会话日志全面解耦。本文用硬核、平实质朴的技术语言，深度拆解其底层架构、分层补丁配置，并手把手带你从无头命令行（Headless）到本地 Web UI 搭建专属的全自动编程 Agent 工作流。"

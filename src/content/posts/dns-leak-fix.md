@@ -3,7 +3,7 @@ title: "科学上网避坑：DNS 泄露检测与 TUN 虚拟网卡失效排障手
 category: "科学上网"
 categoryClass: "tag-proxy"
 categoryIcon: "fa-solid fa-paper-plane"
-date: "2026-02-10"
+date: "2026-10-18"
 readingTime: "8分钟阅读"
 views: "4,670 次阅读"
 lead: "很多人以为开启代理软件就万事大吉，却不知本地宽带运营商机房清清楚楚记录着你的每一个域名解析请求。本文以极客视角剖析 DNS 泄露根源、Fake-IP 隔离防御机制与 TUN 虚拟网卡驱动排障方案。"

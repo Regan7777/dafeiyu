@@ -3,7 +3,7 @@ title: "Karing 全平台通用代理客户端从入门到精通：多协议订�
 category: "科学上网"
 categoryClass: "tag-proxy"
 categoryIcon: "fa-solid fa-paper-plane"
-date: "2026-03-03"
+date: "2026-10-22"
 readingTime: "15分钟阅读"
 views: "5,180 次阅读"
 lead: "Karing 是一款基于 Flutter 与深度优化版 sing-box 核心开发的开源全平台网络代理客户端。它横跨 Windows、macOS、Linux、Android、iOS 以及 Apple TV (tvOS)，打破了以往各平台客户端协议互不兼容的壁垒——无缝支持 Clash、V2Ray、Sing-box、Shadowsocks、Hysteria 2、TUIC 等全部主流订阅格式，并支持通过 WebDAV 或局域网一键跨端同步配置。本文将为你带来从基础安装、多订阅聚合到跨端多设备同步的完整进阶指南。"

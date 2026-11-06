@@ -3,7 +3,7 @@ title: "Sing-box 新一代全平台核心配置与规则集 (Rule-set) 实战进
 category: "科学上网"
 categoryClass: "tag-proxy"
 categoryIcon: "fa-solid fa-paper-plane"
-date: "2026-02-15"
+date: "2026-10-28"
 readingTime: "12分钟阅读"
 views: "5,140 次阅读"
 lead: "Sing-box 作为新一代通用网络核心，以纯 Go 编写带来极致性能与极低内存开销。其开创性的二进制规则集 (Rule-set, .srs) 相比庞大文本规则节省高达 80% 内存。本文详析 JSON 顶层架构、Rule-set 高性能路由与透明代理实操。"

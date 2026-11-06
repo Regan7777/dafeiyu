@@ -3,7 +3,7 @@ title: "云界线机场深度测评：19.88元起轻云、券后13.92元、全IP
 category: "机场推荐"
 categoryClass: "tag-airport"
 categoryIcon: "fa-solid fa-plane-departure"
-date: "2026-11-04"
+date: "2026-11-03"
 readingTime: "10分钟阅读"
 views: "5,880 次阅读"
 lead: "云界线高性价比网络服务深度评测：剖析其轻云、凌云套餐与终身按量包资费，实测 2.5Gbps 大带宽专线吞吐、原生双 ISP 住宅出口及多平台配置使用技巧。"

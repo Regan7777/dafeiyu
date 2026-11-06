@@ -3,7 +3,7 @@ title: "榴莲云机场套餐与使用指南：15元起榴莲皮、金枕年付9
 category: "机场推荐"
 categoryClass: "tag-airport"
 categoryIcon: "fa-solid fa-plane-departure"
-date: "2026-11-04"
+date: "2026-11-02"
 readingTime: "10分钟阅读"
 views: "6,150 次阅读"
 lead: "榴莲云最新套餐资费与使用指南：详细解读榴莲皮、金枕年付、猫山王等各档订阅方案，解析多协议兼容性、海外流媒体与 AI 工具解锁表现及客户端导入指引。"

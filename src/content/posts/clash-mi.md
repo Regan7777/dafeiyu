@@ -3,7 +3,7 @@ title: "2026 全平台轻量代理客户端 Clash Mi 详细安装与配置教程
 category: "科学上网"
 categoryClass: "tag-proxy"
 categoryIcon: "fa-solid fa-paper-plane"
-date: "2026-03-01"
+date: "2026-10-26"
 readingTime: "12分钟阅读"
 views: "4,320 次阅读"
 lead: "Clash Mi（clashmi）作为 KaringX 生态下基于 Flutter 打造的全新跨平台轻量代理工具，原生集成了最新的 Mihomo (Clash.Meta) 满血内核与现代化 Web 仪表盘。它不仅在 iOS、Android、Windows、macOS 和 Linux 上保持一致的丝滑操作体验，更兼顾了极低的待机功耗与极简的新手订阅导入流程。本文将详细演示各平台安装步骤、机场订阅导入及分流规则配置指南。"

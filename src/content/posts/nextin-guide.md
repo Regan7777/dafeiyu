@@ -3,7 +3,7 @@ title: "Nextin (星拓) 苹果全生态免费代理客户端极简上手与机�
 category: "科学上网"
 categoryClass: "tag-proxy"
 categoryIcon: "fa-solid fa-paper-plane"
-date: "2026-03-02"
+date: "2026-10-24"
 readingTime: "10分钟阅读"
 views: "3,890 次阅读"
 lead: "Nextin（中文名：星拓）是专为 Apple 生态量身打造的免费高性能代理客户端，全面支持 iPhone、iPad、Mac 以及 Apple TV。不同于传统小火箭需要付费购买且规则复杂的门槛，星拓完全免费上架 App Store，底层基于强大的 Mihomo (Clash Meta) 内核，不仅原生支持 VLESS/Reality、Hysteria2、TUIC 等新一代协议，还首创了机场站点识别码一键同步机制。本文手把手带你玩转苹果生态的高速无感翻墙体验。"
