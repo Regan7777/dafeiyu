@@ -24,3 +24,4 @@ if (data) {
     console.log(`- ${k}: FAQ=${hasFaq}, Related=${hasRelated}, internalLinks=${internalLinks.length}`);
   });
 }
+

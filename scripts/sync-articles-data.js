@@ -95,3 +95,4 @@ Object.keys(linkGraph).forEach(slug => {
 
 fs.writeFileSync('js/articles-data.js', jsContent, 'utf8');
 console.log('✅ js/articles-data.js successfully synchronized with linkGraph cards!');
+
