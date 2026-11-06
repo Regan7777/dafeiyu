@@ -19,12 +19,6 @@ const prevPost = post.data.prevId ? allPosts.find(p => p.id === post.data.prevId
 const nextPost = post.data.nextId ? allPosts.find(p => p.id === post.data.nextId || (p as any).slug === post.data.nextId) : null;
 const postSlug = post.id || (post as any).slug;
 
-// Recommended / Sidebar posts (Prioritize related, then same category)
-const sameCategoryPosts = allPosts.filter(p => p.id !== post.id && p.data.category === post.data.category);
-const sidebarPosts = (relatedPosts.length > 0 ? relatedPosts : sameCategoryPosts).slice(0, 4);
-
-// Top tags for article
-const articleTags = (post.data.keywords || []).slice(0, 8);
 ---
 
 <BaseLayout
@@ -140,9 +134,8 @@ const articleTags = (post.data.keywords || []).slice(0, 8);
         </nav>
       </article>
 
-      <!-- Sticky TOC & Right Sidebar Navigation -->
+      <!-- Sticky Table of Contents (文章目录导航) -->
       <aside class="toc-container" id="articleSidebarRight">
-        <!-- 1. TOC Card (文章目录) -->
         <div class="toc-card">
           <div class="toc-title">
             <i class="fa-solid fa-list-ul"></i>
@@ -152,42 +145,6 @@ const articleTags = (post.data.keywords || []).slice(0, 8);
             <!-- Populated dynamically on client side -->
           </nav>
         </div>
-
-        <!-- 2. Recommended Reading Widget (相关推荐) -->
-        {sidebarPosts.length > 0 && (
-          <div class="widget" style="padding: 16px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); box-shadow: var(--shadow-card);">
-            <h4 class="widget-title" style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.8px;">
-              <i class="fa-solid fa-compass" style="color: var(--accent-primary);"></i>
-              推荐阅读
-            </h4>
-            <div class="featured-widget-list" style="display: flex; flex-direction: column; gap: 10px;">
-              {sidebarPosts.map(rel => (
-                <div class="featured-widget-card" style="padding: 10px 12px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
-                  <div class="featured-widget-top" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                    <span class={`tag-pill-sm ${rel.data.categoryClass}`} style="font-size: 10px; padding: 1px 6px;">{rel.data.category}</span>
-                    <span style="font-size: 11px; color: var(--text-muted);">{rel.data.date}</span>
-                  </div>
-                  <a href={`/article/${rel.id || (rel as any).slug}`} class="featured-widget-title" style="font-size: 12.5px; line-height: 1.4; color: var(--text-primary); text-decoration: none; font-weight: 600;">{rel.data.title}</a>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <!-- 3. Article Keywords Tags (本文标签) -->
-        {articleTags.length > 0 && (
-          <div class="widget" style="padding: 16px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); box-shadow: var(--shadow-card);">
-            <h4 class="widget-title" style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.8px;">
-              <i class="fa-solid fa-tags" style="color: var(--accent-primary);"></i>
-              本文标签
-            </h4>
-            <div class="tag-cloud" style="display: flex; flex-wrap: wrap; gap: 6px;">
-              {articleTags.map(tag => (
-                <a href={`/tags?tag=${encodeURIComponent(tag)}`} class="tag-cloud-item" style="font-size: 11px; padding: 3px 8px;">{tag}</a>
-              ))}
-            </div>
-          </div>
-        )}
       </aside>
     </div>
   </main>

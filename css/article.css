@@ -298,39 +298,42 @@
   position: sticky;
   top: 80px;
   align-self: flex-start;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
-}
-
-.toc-container::-webkit-scrollbar {
-  width: 4px;
-}
-
-.toc-container::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 4px;
 }
 
 .toc-card {
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 20px 18px;
-  max-height: calc(100vh - 120px);
+  padding: 18px 16px;
+  max-height: calc(100vh - 110px);
   overflow-y: auto;
   box-shadow: var(--shadow-card);
 }
 
+.toc-card::-webkit-scrollbar {
+  width: 4px;
+}
+
+.toc-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.toc-card::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.toc-card::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
 .toc-title {
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--text-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -338,33 +341,42 @@
 
 .toc-title i {
   color: var(--accent-primary);
+  font-size: 13px;
 }
 
 .toc-nav {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .toc-link {
   font-size: 12.5px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   line-height: 1.5;
-  padding: 5px 8px;
+  padding: 6px 10px;
   border-radius: 4px;
   border-left: 2px solid transparent;
   transition: all var(--transition-fast);
   display: block;
+  text-decoration: none;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .toc-link:hover {
-  color: var(--text-primary);
+  color: var(--accent-primary);
   background: var(--bg-input);
 }
 
 .toc-link.toc-h3 {
-  padding-left: 18px;
+  padding-left: 20px;
   font-size: 12px;
+  color: var(--text-muted);
+}
+
+.toc-link.toc-h3:hover {
+  color: var(--accent-primary);
 }
 
 .toc-link.active {
