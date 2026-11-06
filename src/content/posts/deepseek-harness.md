@@ -1,6 +1,6 @@
 ---
 title: "DeepSeek Harness (dsh) 开源 Agent 运行时深度剖析：从 Cordis 插件架构到全自动编程实战"
-category: "AI使用"
+category: "AI工具与实战"
 categoryClass: "tag-ai"
 categoryIcon: "fa-solid fa-robot"
 date: "2026-11-05"

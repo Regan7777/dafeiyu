@@ -182,7 +182,7 @@ function initArticleFilters() {
   if (!articlesGrid) {
     // 如果不在首页，为侧栏分类添加跳转链接支持并同步真实文章数
     try {
-      const saved = JSON.parse(localStorage.getItem('dafeiyu_category_counts') || '{"科学上网":8,"机场推荐":6,"流媒体":3,"AI使用":4,"实用工具":3}');
+      const saved = JSON.parse(localStorage.getItem('dafeiyu_category_counts') || '{"科学上网":7,"机场推荐":7,"海外流媒体":3,"AI工具与实战":4,"实用工具":3}');
       categoryItems.forEach(item => {
         const cat = (item.getAttribute('data-category') || '').trim().replace(/\s+/g, '');
         const badge = item.querySelector('.category-badge-count');
@@ -206,8 +206,8 @@ function initArticleFilters() {
     const counts = {
       '科学上网': 0,
       '机场推荐': 0,
-      '流媒体': 0,
-      'AI使用': 0,
+      '海外流媒体': 0,
+      'AI工具与实战': 0,
       '实用工具': 0
     };
 

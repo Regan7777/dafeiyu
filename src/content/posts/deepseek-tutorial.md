@@ -1,6 +1,6 @@
 ---
 title: "DeepSeek V3 / R1 满血版高效提问与本地客户端部署技巧"
-category: "AI使用"
+category: "AI工具与实战"
 categoryClass: "tag-ai"
 categoryIcon: "fa-solid fa-robot"
 date: "2026-02-12"

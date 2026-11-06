@@ -204,7 +204,7 @@ const ARTICLES_DATA = {
   "streaming-unlock": {
     "id": "streaming-unlock",
     "title": "流媒体 Netflix 与 Disney+ 解锁原理及双栈网络优化实测",
-    "category": "流媒体",
+    "category": "海外流媒体",
     "categoryClass": "tag-media",
     "categoryIcon": "fa-solid fa-tv",
     "date": "2026-01-28",
@@ -218,7 +218,7 @@ const ARTICLES_DATA = {
   "youtube-family": {
     "id": "youtube-family",
     "title": "2026 YouTube Premium 低价家庭组与个人合租避坑指南",
-    "category": "流媒体",
+    "category": "海外流媒体",
     "categoryClass": "tag-media",
     "categoryIcon": "fa-solid fa-tv",
     "date": "2026-01-18",
@@ -232,7 +232,7 @@ const ARTICLES_DATA = {
   "spotify-hbo": {
     "id": "spotify-hbo",
     "title": "Spotify 与 HBO Max 全区跨区注册与原生住宅 IP 节点搭配经验",
-    "category": "流媒体",
+    "category": "海外流媒体",
     "categoryClass": "tag-media",
     "categoryIcon": "fa-solid fa-tv",
     "date": "2026-01-02",
@@ -246,7 +246,7 @@ const ARTICLES_DATA = {
   "deepseek-harness": {
     "id": "deepseek-harness",
     "title": "DeepSeek Harness (dsh) 开源 Agent 运行时深度剖析：从 Cordis 插件架构到全自动编程实战",
-    "category": "AI使用",
+    "category": "AI工具与实战",
     "categoryClass": "tag-ai",
     "categoryIcon": "fa-solid fa-robot",
     "date": "2026-11-05",
@@ -260,7 +260,7 @@ const ARTICLES_DATA = {
   "deepseek-tutorial": {
     "id": "deepseek-tutorial",
     "title": "DeepSeek V3 / R1 满血版高效提问与本地客户端部署技巧",
-    "category": "AI使用",
+    "category": "AI工具与实战",
     "categoryClass": "tag-ai",
     "categoryIcon": "fa-solid fa-robot",
     "date": "2026-02-12",
@@ -274,7 +274,7 @@ const ARTICLES_DATA = {
   "ai-workflow": {
     "id": "ai-workflow",
     "title": "用 AI 重新定义你的工作流：5个落地实践方案",
-    "category": "AI使用",
+    "category": "AI工具与实战",
     "categoryClass": "tag-ai",
     "categoryIcon": "fa-solid fa-robot",
     "date": "2026-01-20",
@@ -288,7 +288,7 @@ const ARTICLES_DATA = {
   "chatgpt-claude-account": {
     "id": "chatgpt-claude-account",
     "title": "ChatGPT 与 Claude 海外账号防封指南与 API 绑卡实操心得",
-    "category": "AI使用",
+    "category": "AI工具与实战",
     "categoryClass": "tag-ai",
     "categoryIcon": "fa-solid fa-robot",
     "date": "2026-01-12",

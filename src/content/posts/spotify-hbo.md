@@ -1,6 +1,6 @@
 ---
 title: "Spotify 与 HBO Max 全区跨区注册与原生住宅 IP 节点搭配经验"
-category: "流媒体"
+category: "海外流媒体"
 categoryClass: "tag-media"
 categoryIcon: "fa-solid fa-tv"
 date: "2026-01-02"

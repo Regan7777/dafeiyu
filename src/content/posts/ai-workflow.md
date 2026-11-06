@@ -1,6 +1,6 @@
 ---
 title: "用 AI 重新定义你的工作流：5个落地实践方案"
-category: "AI使用"
+category: "AI工具与实战"
 categoryClass: "tag-ai"
 categoryIcon: "fa-solid fa-robot"
 date: "2026-01-20"

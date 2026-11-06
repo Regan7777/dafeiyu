@@ -1,6 +1,6 @@
 ---
 title: "流媒体 Netflix 与 Disney+ 解锁原理及双栈网络优化实测"
-category: "流媒体"
+category: "海外流媒体"
 categoryClass: "tag-media"
 categoryIcon: "fa-solid fa-tv"
 date: "2026-01-28"

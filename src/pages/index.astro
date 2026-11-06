@@ -182,8 +182,17 @@ const allTags = Array.from(new Set(allPosts.flatMap(p => p.data.keywords))).slic
       const filterClearBtn = document.getElementById('filterClearBtn');
       const cards = document.querySelectorAll('.article-card');
 
+      function normalizeCategory(cat) {
+        if (!cat) return '';
+        const c = cat.trim();
+        if (c === '海外流媒体' || c === '流媒体') return '海外流媒体';
+        if (c === 'AI工具与实战' || c === 'AI使用' || c === 'AI实战' || c === 'AI工具') return 'AI工具与实战';
+        return c;
+      }
+
       function applyFilter(category, query) {
         let visibleCount = 0;
+        const normTarget = normalizeCategory(category);
 
         cards.forEach(card => {
           const cardCat = card.getAttribute('data-category');
@@ -191,7 +200,7 @@ const allTags = Array.from(new Set(allPosts.flatMap(p => p.data.keywords))).slic
           const cardExcerpt = (card.getAttribute('data-excerpt') || '').toLowerCase();
           const cardTags = (card.getAttribute('data-tags') || '').toLowerCase();
 
-          let matchCat = !category || cardCat === category;
+          let matchCat = !category || normalizeCategory(cardCat) === normTarget;
           let matchQuery = true;
           if (query) {
             const q = query.toLowerCase();
@@ -221,6 +230,31 @@ const allTags = Array.from(new Set(allPosts.flatMap(p => p.data.keywords))).slic
           applyFilter(null, null);
         });
       }
+
+      // Sidebar category instant click listener
+      const sidebarCatLinks = document.querySelectorAll('.sidebar-categories a');
+      sidebarCatLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href') || '';
+          const match = href.match(/[?&]category=([^&]+)/);
+          if (match) {
+            e.preventDefault();
+            const targetCat = decodeURIComponent(match[1]);
+            window.history.pushState({}, '', href);
+            applyFilter(targetCat, null);
+            const targetEl = document.getElementById('latestArticles');
+            if (targetEl) {
+              const top = targetEl.getBoundingClientRect().top + window.scrollY - 80;
+              window.scrollTo({ top, behavior: 'smooth' });
+            }
+          }
+        });
+      });
+
+      window.addEventListener('popstate', () => {
+        const params = new URLSearchParams(window.location.search);
+        applyFilter(params.get('category'), params.get('search'));
+      });
 
       if (catParam || searchParam) {
         applyFilter(catParam, searchParam);

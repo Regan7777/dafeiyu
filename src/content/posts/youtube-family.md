@@ -1,6 +1,6 @@
 ---
 title: "2026 YouTube Premium 低价家庭组与个人合租避坑指南"
-category: "流媒体"
+category: "海外流媒体"
 categoryClass: "tag-media"
 categoryIcon: "fa-solid fa-tv"
 date: "2026-01-18"

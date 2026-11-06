@@ -1,6 +1,6 @@
 ---
 title: "ChatGPT 与 Claude 海外账号防封指南与 API 绑卡实操心得"
-category: "AI使用"
+category: "AI工具与实战"
 categoryClass: "tag-ai"
 categoryIcon: "fa-solid fa-robot"
 date: "2026-01-12"
