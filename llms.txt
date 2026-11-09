@@ -1,0 +1,50 @@
+# 大肥鱼 · 技术博客 (dafeiyu.blog)
+
+> 2026 年高品质原创技术干货博客，持续更新科学上网客户端配置指南、主流专线机场横评、海外流媒体解锁实战及前沿 AI 生产力工具探索。
+
+## 全站核心专栏与文章索引
+
+### 科学上网
+
+- [2026 全平台轻量代理客户端 Clash Mi 详细安装与配置教程 (含 iOS / Android / Windows 下载)](https://dafeiyu.blog/article/clash-mi): Clash Mi（clashmi）作为 KaringX 生态下基于 Flutter 打造的全新跨平台轻量代理工具，原生集成了最新的 Mihomo (Clash.Meta) 满血内核与现代化 Web 仪表盘。它不仅在 iOS、Android、Windows、macOS 和 Linux 上保持一致的丝滑
+- [2026 最新 Clash Verge Rev 详细配置与规则分流新手教程](https://dafeiyu.blog/article/clash-verge): Clash Verge Rev 作为基于全新 Mihomo (原 Clash.Meta) 内核维护的现代化全平台客户端，以其轻量内存占用、出色的跨平台界面与稳定的 TUN 虚拟网卡模式，成为目前最主流的科学上网首选。本文以大白话详细拆解从内核选型、订阅导入、TUN 模式实战到自定义规则分流与 DNS
+- [科学上网避坑：DNS 泄露检测与 TUN 虚拟网卡失效排障手册](https://dafeiyu.blog/article/dns-leak-fix): 很多人以为开启代理软件就万事大吉，却不知本地宽带运营商机房清清楚楚记录着你的每一个域名解析请求。本文以极客视角剖析 DNS 泄露根源、Fake-IP 隔离防御机制与 TUN 虚拟网卡驱动排障方案。
+- [Karing 全平台通用代理客户端从入门到精通：多协议订阅兼容与 Apple TV / 跨端同步教程](https://dafeiyu.blog/article/karing-guide): Karing 是一款基于 Flutter 与深度优化版 sing-box 核心开发的开源全平台网络代理客户端。它横跨 Windows、macOS、Linux、Android、iOS 以及 Apple TV (tvOS)，打破了以往各平台客户端协议互不兼容的壁垒——无缝支持 Clash、V2Ray、S
+- [Nextin (星拓) 苹果全生态免费代理客户端极简上手与机场一键接入指南 (iOS / Mac / Apple TV)](https://dafeiyu.blog/article/nextin-guide): Nextin（中文名：星拓）是专为 Apple 生态量身打造的免费高性能代理客户端，全面支持 iPhone、iPad、Mac 以及 Apple TV。不同于传统小火箭需要付费购买且规则复杂的门槛，星拓完全免费上架 App Store，底层基于强大的 Mihomo (Clash Meta) 内核，不仅
+- [Shadowrocket (小火箭) iOS 新手配置、节点订阅与模块规则详解](https://dafeiyu.blog/article/shadowrocket-ios): Shadowrocket（小火箭）作为 iOS 平台保有量最高的高性能网络工具，以其对几乎全协议的原生支持与出色的后台保活调度深受青睐。本文手把手梳理正版购买、订阅导入、配置模式分流、去广告模块安装以及后台省电防断连优化技巧。
+- [Sing-box 新一代全平台核心配置与规则集 (Rule-set) 实战进阶](https://dafeiyu.blog/article/sing-box-guide): Sing-box 作为新一代通用网络核心，以纯 Go 编写带来极致性能与极低内存开销。其开创性的二进制规则集 (Rule-set, .srs) 相比庞大文本规则节省高达 80% 内存。本文详析 JSON 顶层架构、Rule-set 高性能路由与透明代理实操。
+
+### 机场推荐
+
+- [大佬云机场深度评测：15元起限时特惠、全IPLC专线与终身不限时包最新资费方案](https://dafeiyu.blog/article/dalao): 深度测评大佬云网络服务：全面解析其多入口 BGP 隧道与 IEPL/IPLC 专线架构、全套餐最新资费与按量不限时方案，提供晚高峰真实延迟与节点稳定性选购参考。
+- [拼好连免费版实测与深度解析：永久免费翻墙梯子靠谱吗？（附三大安全风险预警与避坑指南）](https://dafeiyu.blog/article/free-vpn-risks): 在跨国网络加速工具大多转为按月或按年付费的背景下，一款宣称“0元永久免费、不限流量、免注册一键直连”的「拼好连免费版」在小众社群引发了讨论。然而物理世界的国际海缆带宽租金极其昂贵，天下真有免费的午餐吗？本文从网络工程与真实攻防视角带来客观中立的实测剖析，揭秘免费梯子背后的物理成本悖论、闭源客户端隐私
+- [环球梯机场深度评测：15元起微享、全套8档周期资费、4款按量包与设备数避坑指南](https://dafeiyu.blog/article/huanqiuti): 全面评测环球梯网络服务商：梳理 8 档周期套餐与 4 款按量不限时资费明细，深入分析不同套餐的设备连接数限制、流媒体解锁能力与多设备防坑选购建议。
+- [榴莲云机场套餐与使用指南：15元起榴莲皮、金枕年付96元、猫山王与大黑刺最新资费表](https://dafeiyu.blog/article/liulian): 榴莲云最新套餐资费与使用指南：详细解读榴莲皮、金枕年付、猫山王等各档订阅方案，解析多协议兼容性、海外流媒体与 AI 工具解锁表现及客户端导入指引。
+- [闪电鼠机场深度评测：15元起限时特惠、全IPLC专线直连与原生双ISP终身包最新方案](https://dafeiyu.blog/article/shandianshu): 闪电鼠网络服务深度评测：解析其全线 IPLC 专线直连架构与原生双 ISP 住宅出口配置，盘点轻量入门、终身不限时随心包资费，提供晚高峰测速与防封锁选购指南。
+- [神行加速机场全面测评：19.88元起全IPLC专线、96元年付特惠与不限时大包最新资费](https://dafeiyu.blog/article/shenxing): 神行加速全面实测指南：评测其全 IPLC 内网专线网络拓扑、年付特惠方案与终身按量不限时套餐，实测晚高峰 4K/8K 视频流畅度与 ChatGPT 纯净解锁能力。
+- [云界线机场深度测评：19.88元起轻云、券后13.92元、全IPLC专线与最新资费表](https://dafeiyu.blog/article/yunjiexian): 云界线高性价比网络服务深度评测：剖析其轻云、凌云套餐与终身按量包资费，实测 2.5Gbps 大带宽专线吞吐、原生双 ISP 住宅出口及多平台配置使用技巧。
+
+### 海外流媒体
+
+- [Spotify 与 HBO Max 全区跨区注册与原生住宅 IP 节点搭配经验](https://dafeiyu.blog/article/spotify-hbo): 针对海外高阶流媒体对支付风控极严、锁区拒绝注册的现象，梳理节点欺诈值检测与原生住宅 IP 纯净度要求，让你一次过审搞定。
+- [流媒体 Netflix 与 Disney+ 解锁原理及双栈网络优化实测](https://dafeiyu.blog/article/streaming-unlock): 看 Netflix 只能看自制剧？Disney+ 总是提示服务不可用？流媒体平台的反爬封控机制到底是如何运作的？本文带你深入了解 ASN 属性检测、原生双栈住宅 IP 以及通过 DNS 分流进行全区片库解锁的硬核方案。
+- [2026 YouTube Premium 低价家庭组与个人合租避坑指南](https://dafeiyu.blog/article/youtube-family): 告别烦人的片头片中贴片广告，享受高码率与后台熄屏播放。本文系统整理当前依然有效的低价区跨区订阅与家庭组成员同住地址验证避坑指南。
+
+### AI工具与实战
+
+- [用 AI 重新定义你的工作流：5个落地实践方案](https://dafeiyu.blog/article/ai-workflow): 告别浅尝辄止的聊天对话框。本文分享将 LLM 深入融入写作润色、代码重构、行业研报速览与自动化工作流的 5 种高阶应用方法论。
+- [ChatGPT 与 Claude 海外账号防封指南与 API 绑卡实操心得](https://dafeiyu.blog/article/chatgpt-claude-account): 梳理 OpenAI 与 Anthropic 严苛的风控封号机制，从原生干净 IP 节点筛选、无痕浏览器指纹、到虚拟信用卡充值绑卡的一揽子安全方案。
+- [DeepSeek Harness (dsh) 开源 Agent 运行时深度剖析：从 Cordis 插件架构到全自动编程实战](https://dafeiyu.blog/article/deepseek-harness): DeepSeek 官方开源的 Agent 运行时与编排框架 DeepSeek Harness（简称 dsh）引起了全球开发者社区的极大轰动。不同于传统沉重固化的 Agent 巨石框架，dsh 基于先进的 Cordis 微内核架构，彻底践行“万物皆插件（Everything is a Plugin）”
+- [DeepSeek V3 / R1 满血版高效提问与本地客户端部署技巧](https://dafeiyu.blog/article/deepseek-tutorial): 国产大模型 DeepSeek R1 凭借强大的强化学习思维链（Chain of Thought）与惊人的性价比，在全世界掀起巨浪。本文详细拆解如何避开网页端“服务器繁忙”的限制，通过第三方本地客户端配合 API 接入满血版，并提供一套高质量的实操提问 Prompt 框架。
+
+### 实用工具
+
+- [2026 年最值得安装的 10 个 Chrome 扩展插件（沉浸式翻译与效率神器）](https://dafeiyu.blog/article/chrome-extensions): 现代浏览器早已不再仅仅是一个简单的网页渲染窗口，而是我们每天面对时间最长的核心操作系统。通过扩展生态系统（Chrome Extensions），我们可以赋予浏览器无限的可能。本文精选出 10 款兼具设计美感与硬核生产力的神器。
+- [macOS 必装的 20 个菜单栏工具与 Raycast 神兵利器](https://dafeiyu.blog/article/macos-raycast): 梳理个人日常高频使用的轻量神兵利器，包含剪贴板历史、快捷启动器、系统状态监视与窗口管理，让桌面效率翻倍。
+- [Windows 11 深度优化指南：打造清爽极客工作站](https://dafeiyu.blog/article/windows-optimize): 原生 Windows 11 充斥着各种强制绑定的联网小组件、天气广告、层层折叠的臃肿右键菜单和庞大的遥测追踪服务。本文教你如何一步一步彻底剥离冗余包袱，配合 WSL2 与现代化终端调教，打造出一台极度清爽舒适的高生产力极客工作站。
+
+## 基础工具与导航
+
+- [实用工具箱](https://dafeiyu.blog/tools): 精选常用代理客户端、AI工具与网络测速诊断平台
+- [标签聚合](https://dafeiyu.blog/tags): 全站技术主题标签快速索引
+- [关于作者](https://dafeiyu.blog/about): 大肥鱼团队介绍与测评原则
