@@ -3,7 +3,7 @@ const path = require('path');
 const https = require('https');
 
 const host = 'dafeiyu.blog';
-const key = 'c3aed0afcfec450fa712ff25bf7353ff';
+const key = '7ec54bed5e684bee9e50ea059b0e5538';
 const keyLocation = `https://${host}/${key}.txt`;
 
 // Read URLs from sitemap.xml
@@ -34,7 +34,8 @@ const payload = JSON.stringify({
 
 const endpoints = [
   { name: 'Bing IndexNow', host: 'www.bing.com' },
-  { name: 'IndexNow API', host: 'api.indexnow.org' }
+  { name: 'IndexNow API', host: 'api.indexnow.org' },
+  { name: 'Yandex IndexNow', host: 'yandex.com' }
 ];
 
 endpoints.forEach(ep => {
