@@ -32,32 +32,39 @@ const payload = JSON.stringify({
   urlList
 });
 
-const req = https.request('https://api.indexnow.org/indexnow', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json; charset=utf-8',
-    'Content-Length': Buffer.byteLength(payload)
-  }
-}, (res) => {
-  console.log(`IndexNow API Response Status: ${res.statusCode} ${res.statusMessage}`);
-  let data = '';
-  res.on('data', chunk => data += chunk);
-  res.on('end', () => {
-    if (res.statusCode === 200 || res.statusCode === 202) {
-      console.log('🎉 Successfully submitted all URLs to IndexNow!');
-    } else {
-      console.log('Response body:', data || '(empty)');
-      if (res.statusCode === 422) {
-        console.log('Note: 422 usually indicates the key location is not yet reachable on the live domain.');
-      }
+const endpoints = [
+  { name: 'Bing IndexNow', host: 'www.bing.com' },
+  { name: 'IndexNow API', host: 'api.indexnow.org' }
+];
+
+endpoints.forEach(ep => {
+  const req = https.request({
+    hostname: ep.host,
+    port: 443,
+    path: '/indexnow',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Content-Length': Buffer.byteLength(payload)
     }
+  }, (res) => {
+    let data = '';
+    res.on('data', chunk => data += chunk);
+    res.on('end', () => {
+      console.log(`[IndexNow -> ${ep.name}] 状态码: ${res.statusCode} ${res.statusMessage}`);
+      if (res.statusCode === 200 || res.statusCode === 202) {
+        console.log(`[IndexNow -> ${ep.name}] 提交成功！`);
+      } else {
+        console.log(`[IndexNow -> ${ep.name}] 响应内容: ${data || '(无)'}`);
+      }
+    });
   });
-});
 
-req.on('error', (err) => {
-  console.error('IndexNow submission error:', err.message);
-});
+  req.on('error', (err) => {
+    console.error(`[IndexNow -> ${ep.name}] 提交错误:`, err.message);
+  });
 
-req.write(payload);
-req.end();
+  req.write(payload);
+  req.end();
+});
 
