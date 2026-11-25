@@ -26,6 +26,7 @@
 
 ### 海外流媒体
 
+- [Apple TV 4K 与杜比视界跨区解锁实战：流媒体锁区检测、家宽搭配与家庭组避坑](https://dafeiyu.blog/article/apple-tv-dolby-vision-unlock): Apple TV 4K 客厅大屏跨区追剧全指南：深度剖析 tvOS 代理方案（Surge / Sing-box / Loon Lite）、杜比视界与全景声高码率 UDP 稳定传输调优、Netflix/Disney+ 原生家宽解锁检测及低价家庭组防风控避坑经验。
 - [Spotify 与 HBO Max 全区跨区注册与原生住宅 IP 节点搭配经验](https://dafeiyu.blog/article/spotify-hbo): 针对海外高阶流媒体对支付风控极严、锁区拒绝注册的现象，梳理节点欺诈值检测与原生住宅 IP 纯净度要求，让你一次过审搞定。
 - [流媒体 Netflix 与 Disney+ 解锁原理及双栈网络优化实测](https://dafeiyu.blog/article/streaming-unlock): 看 Netflix 只能看自制剧？Disney+ 总是提示服务不可用？流媒体平台的反爬封控机制到底是如何运作的？本文带你深入了解 ASN 属性检测、原生双栈住宅 IP 以及通过 DNS 分流进行全区片库解锁的硬核方案。
 - [2026 YouTube Premium 低价家庭组与个人合租避坑指南](https://dafeiyu.blog/article/youtube-family): 告别烦人的片头片中贴片广告，享受高码率与后台熄屏播放。本文系统整理当前依然有效的低价区跨区订阅与家庭组成员同住地址验证避坑指南。

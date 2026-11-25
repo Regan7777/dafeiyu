@@ -23,7 +23,7 @@ faqs:
     a: "Error 83 多由设备环境或浏览器 DRM 保护引起；Error 73 则代表当前代理出口被 Disney+ 判定为黑名单机房 IP。解决方法是清理浏览器 Cache 与 Cookie，切换至支持 Disney+ 原生解锁的专线节点。"
   - q: "如何调整客户端分流规则，避免日常访问非流媒体网站也被绕道？"
     a: "在 Clash 或 Sing-box 中配置专属的规则集（Rule-set），仅将 netflix.com、disneyplus.com 等域名分流至流媒体专用节点，其他常规流量继续走高速直连或默认节点。"
-relatedArticles: ["clash-verge","sing-box-guide","youtube-family","spotify-hbo","dalao"]
+relatedArticles: ["clash-verge","sing-box-guide","youtube-family","spotify-hbo","dalao","apple-tv-dolby-vision-unlock"]
 prevId: "huanqiuti"
 nextId: "youtube-family"
 ---
